@@ -1,0 +1,13 @@
+@import './variables';
+
+body {
+  @include flexbox-style(flex, center, center, row, 100vh);
+}
+
+a {
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+  margin: 0 2rem;
+  padding: 0;
+}
