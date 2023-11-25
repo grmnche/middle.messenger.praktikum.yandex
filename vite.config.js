@@ -24,7 +24,6 @@ export default defineConfig({
         ),
         profile: resolve(__dirname, 'src/pages/profile/profile.html'),
         chat: resolve(__dirname, 'src/pages/chat/chat.html'),
-        chat: resolve(__dirname, 'src/pages/chat/chat.html'),
         error400: resolve(__dirname, 'src/pages/error/error400.html'),
         error500: resolve(__dirname, 'src/pages/error/error500.html'),
         modals: resolve(__dirname, 'src/pages/modals/modals.html'),

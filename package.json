@@ -1,5 +1,6 @@
 {
-  "name": "messenger",
+  "name": "wdm",
+  "author": "web-dragon",
   "private": true,
   "version": "0.0.0",
   "type": "module",
