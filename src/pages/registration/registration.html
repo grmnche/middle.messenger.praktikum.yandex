@@ -1,0 +1,20 @@
+{{#> initial-page/initial-page title='Registration' }}
+<div class="form">
+  <link rel="stylesheet" href="./registration.scss" />
+  <h2>Registration</h2>
+  <div>
+    {{> input/input type="email" name="Email"}}
+    {{> input/input type="text" name="Login"}}
+    {{> input/input type="text" name="Name"}}
+    {{> input/input type="text" name="Surname"}}
+    {{> input/input type="text" name="Number"}}
+    {{> input/input type="password" name="Password"}}
+  </div>
+
+  {{> button/button
+  label="Sign in"}}
+
+  <a href="../error/error400.html">Have no
+    account?</a>
+</div>
+{{/ initial-page/initial-page}}

@@ -1,0 +1,13 @@
+{{#> initial-page/initial-page title='Login' }}
+<div class='form'>
+  <link rel='stylesheet' href='./login.scss' />
+  <h2>Login</h2>
+  <div>
+    {{> input/input type='text' name='Login'}}
+    {{> input/input
+    type='password' name='Password'}}
+  </div>
+  {{> button/button label='Sign in'}}
+  <a href='../error/error400.html'>Have no account?</a>
+</div>
+{{/ initial-page/initial-page}}
