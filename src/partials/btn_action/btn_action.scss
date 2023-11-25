@@ -1,18 +1,18 @@
 @import '/layout/scss/variables';
 
 .btn-action {
-    @include flexbox-style(flex, start, center, row, auto);
+  @include flexbox-style(flex, start, center, row, auto);
 
-    width: 15rem;
-    color: $color-accent;
-    padding: 0.5rem;
+  width: 15rem;
+  color: $color-accent;
+  padding: 0.5rem;
 
-    .action-btn {
-        width: 2rem;
-        height: 2rem;
-    }
+  .action-btn {
+    width: 2rem;
+    height: 2rem;
+  }
 
-    img {
-        margin-right: 1rem;
-    }
+  img {
+    margin-right: 1rem;
+  }
 }

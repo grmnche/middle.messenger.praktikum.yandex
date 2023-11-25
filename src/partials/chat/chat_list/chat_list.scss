@@ -1,18 +1,18 @@
 @import '/layout/scss/variables';
 
 .chat-list {
-    width: 20%;
-    height: 100%;
-    border-right: 1px solid $dark-text-color;
-    display: flex;
-    justify-content: center;
-  
-    #search-field {
-      background: $main-light;
-      border-radius: 5px;
-      width: 90%;
-      height: 2rem;
-      margin-top: 2rem;
-      border: none;
-    }
+  width: 20%;
+  height: 100%;
+  border-right: 1px solid $dark-text-color;
+  display: flex;
+  justify-content: center;
+
+  #search-field {
+    background: $main-light;
+    border-radius: 5px;
+    width: 90%;
+    height: 2rem;
+    margin-top: 2rem;
+    border: none;
   }
+}
