@@ -1,4 +1,4 @@
-![Alt text](https://img.shields.io/badge/progress-version-1.0.0-yellow)
+[![Build Status](https://img.shields.io/badge/Build-Progress-yellow)](https://github.com/grmnche/middle.messenger.praktikum.yandex/tree/sprint_1)
 
 ## WebDragonMessanger (WDM)
 
@@ -20,3 +20,6 @@
 Код **WDM** написан в стиле современной веб-разработки с использованием набора основополагающих практик и инструментов, в том числе KISS и DRY. Структура приложения построена на шаблонизации и компонентном подходе. Проект нацелен на удобство в использовании как для пользователей, так и для разработчиков.
 
 Разработка происходит в ветке Sprint (i), i - текущий этап разработки.
+
+**Pull request**
+[https://github.com/grmnche/middle.messenger.praktikum.yandex/pull/6]
