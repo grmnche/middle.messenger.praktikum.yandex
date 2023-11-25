@@ -1,0 +1,24 @@
+{{#> initial_page/initial_page title='Profile' }}
+<div class='profile'>
+    <link rel='stylesheet' href='./profile.scss' />
+
+    {{> profile_back_bar/profile_back_bar}}
+
+    {{> user_avatar/user_avatar class='user-avatar' src='/images/avatar.png' user-name='John' }}
+
+    <div class='data-container'>
+        {{> profile_data_item/profile_data_item item_name='Email' item_value='winteriscoming@yandex.ru'}}
+        {{> profile_data_item/profile_data_item item_name='Login' item_value='johnsnow'}}
+        {{> profile_data_item/profile_data_item item_name='Name' item_value='John'}}
+        {{> profile_data_item/profile_data_item item_name='Surname' item_value='Snow'}}
+        {{> profile_data_item/profile_data_item item_name='Chatname' item_value='John'}}
+        {{> profile_data_item/profile_data_item item_name='Number' item_value='+7 (xxx) xxx xx xx'}}
+    </div>
+
+    <div class='profile-footer'>
+        <a href='./modules/change_profile_data/change_profile_data.html'>Change info</a>
+        <a href='./modules/change_password/change_profile_password.html'>Change password</a>
+        <a href='../../index.html'>Logout</a>
+    </div>
+</div>
+{{/ initial_page/initial_page}}

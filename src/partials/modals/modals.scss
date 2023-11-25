@@ -1,0 +1,13 @@
+@import '/layout/scss/variables';
+
+.modal {
+  background: $main-light;
+  border-radius: 12px;
+
+  padding: 0.5rem;
+
+  img {
+    width: 3rem;
+    height: 3rem;
+  }
+}
