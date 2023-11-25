@@ -1,6 +1,6 @@
 [![Build Status](https://img.shields.io/badge/Build-Progress-yellow)](https://github.com/grmnche/middle.messenger.praktikum.yandex/tree/sprint_1)
 
-## WebDragonMessanger (WDM)
+## WebDragonMessenger (WDM)
 
 **WDM** - простой в использовании мессенджер для неформального и делового общения. С его помощью можно всегда оставаться на связи с друзьями и коллегами, обмениваться текстовыми сообщениями, отправлять и получать файлы различных форматах.
 
