@@ -1,13 +1,13 @@
 @import '/layout/scss/variables';
 
-.btn-action {
+.btn-with-action {
   @include flexbox-style(flex, start, center, row, auto);
 
   width: 15rem;
   color: $color-accent;
   padding: 0.5rem;
 
-  .action-btn {
+  .modal-btn {
     width: 2rem;
     height: 2rem;
   }

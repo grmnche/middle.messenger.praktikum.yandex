@@ -3,7 +3,7 @@
 @import '/layout/scss/button/button.scss';
 @import '/layout/scss/button/button_dark.scss';
 
-.load_files-modal {
+.load-files-modal {
   @include flexbox-style(flex, center, center, column, 260px);
 
   width: 340px;

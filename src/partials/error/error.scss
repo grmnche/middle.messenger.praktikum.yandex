@@ -1,15 +1,15 @@
 @import '/layout/scss/main';
 
-div {
+main {
   @include flexbox-style(flex, center, center, column, 100%);
 
-  p:nth-child(1) {
+  h1 {
     color: #cecece;
     font-size: 4rem;
     margin: 0;
   }
 
-  p:nth-child(2) {
+  h2 {
     color: #cecece;
     font-size: 2rem;
     font-weight: 300;

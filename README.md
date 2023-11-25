@@ -22,9 +22,19 @@
 Разработка происходит в ветке Sprint (i), i - текущий этап разработки.
 
 **Pull request**
-
 [https://github.com/grmnche/middle.messenger.praktikum.yandex/pull/10]
 
 **Netlify**
-
 [https://bucolic-salamander-26d639.netlify.app/]
+
+**Страницы**
+[Главная страница](src/index.html)
+[Ошибка400](src/pages/error/error400.html)
+[Ошибка500](src/pages/error/error500.html)
+[Вход](src/pages/login/login.html)
+[Регистрация](src/pages/registration/registration.html)
+[Изменение данных профиля](src/pages/profile/modules/change_profile_data/change_profile_data.html)
+[Изменение пароля](src/pages/profile/modules/change_password/change_profile_password.html)
+[Профиль](src/pages/profile/profile.html)
+[Чат](src/pages/chat/chat.html)
+[Модальные окна](src/pages/modals/modals.html)

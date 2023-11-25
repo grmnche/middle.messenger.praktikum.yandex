@@ -17,10 +17,15 @@ body {
     flex-direction: column;
 
     div {
-      @include flexbox-style(flex, center, center, column, auto);
-
       width: 100%;
       margin-bottom: 2rem;
+
+      form {
+        @include flexbox-style(flex, center, center, column, auto);
+
+        width: 100%;
+        height: 100%;
+      }
     }
 
     h2 {

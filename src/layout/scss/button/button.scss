@@ -1,4 +1,4 @@
-button {
+button:not(.modal-btn) {
   width: 280px;
   min-height: 37px;
   border-radius: 8px;
