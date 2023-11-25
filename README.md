@@ -23,7 +23,7 @@
 
 **Pull request**
 
-[https://github.com/grmnche/middle.messenger.praktikum.yandex/pull/9]
+[https://github.com/grmnche/middle.messenger.praktikum.yandex/pull/10]
 
 **Netlify**
 
