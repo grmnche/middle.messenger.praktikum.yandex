@@ -8,24 +8,25 @@ body {
 
   .form {
     width: 340px;
+    height: 450px;
+
     min-height: 450px;
     max-height: 550px;
+
     border-radius: 12px;
     background-color: $main-light;
     display: flex;
     align-items: center;
     flex-direction: column;
 
-    div {
+    form {
       width: 100%;
       margin-bottom: 2rem;
 
-      form {
-        @include flexbox-style(flex, center, center, column, auto);
+      @include flexbox-style(flex, center, center, column, auto);
 
-        width: 100%;
-        height: 100%;
-      }
+      width: 100%;
+      height: 100%;
     }
 
     h2 {
@@ -50,8 +51,11 @@ body {
   }
 }
 
-a {
+nav {
   margin-bottom: 1.5rem;
-  color: $main-color;
-  text-decoration: none;
+  
+  a {
+    color: $main-color;
+    text-decoration: none;
+  }
 }

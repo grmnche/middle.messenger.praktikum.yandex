@@ -9,7 +9,7 @@
   button {
     cursor: pointer;
 
-    width: 2rem;
+    width: 2.1rem;
     height: 2rem;
     z-index: 2;
 
@@ -58,8 +58,8 @@
     align-items: center;
 
     form {
+      display: flex;
       width: 92.5%;
-      margin-inline: 1rem;
       z-index: 1;
 
       #message {
@@ -67,6 +67,7 @@
         height: 2rem;
         border-radius: 30px;
         border: none;
+        margin-inline: 1rem;
       }
     }
   }

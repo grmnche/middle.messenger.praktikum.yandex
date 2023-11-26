@@ -29,4 +29,8 @@
   button {
     margin-bottom: 2.5rem;
   }
+
+  form {
+    @include flexbox-style(flex, center, center, column, 260px);
+  }
 }
