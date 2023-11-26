@@ -1,6 +1,6 @@
 @import './variables';
 
-body {
+nav {
   @include flexbox-style(flex, center, center, row, 100vh);
 }
 

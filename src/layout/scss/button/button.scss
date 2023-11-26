@@ -9,7 +9,8 @@ button:not(.modal-btn) {
   cursor: pointer;
   transition: 0.2s;
 
-  margin: auto 0 1rem;
+  margin: auto 0 -1rem;
+ 
 
   &:hover {
     opacity: 0.8;

@@ -16,9 +16,12 @@ main {
     margin: 1rem 0 0;
   }
 
-  a {
-    text-decoration: none;
-    color: $text-color;
+  nav {
     margin-top: 5rem;
+
+    a {
+      text-decoration: none;
+      color: $text-color;
+    }
   }
 }
