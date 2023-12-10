@@ -1,7 +1,3 @@
-@import '/layout/scss/button/button';
-@import '/layout/scss/button/button_light';
-@import '/layout/scss/main';
-
 .profile,
 .change-profile-password,
 .change-profile-data {
@@ -42,11 +38,15 @@
   }
 }
 
-input {
+.item-value {
   margin: 0.6rem 0;
   background: transparent;
   border: none;
   text-align: right;
   width: 14rem;
   font-size: 1rem;
+}
+
+.profile-button {
+  margin-bottom: 8rem !important;
 }

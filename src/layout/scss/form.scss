@@ -38,11 +38,11 @@ body {
     label {
       width: 80%;
       font-size: 14px;
-      color: $dark-text-color;
+      color: $light-text-color;
     }
 
     input {
-      width: 80%;
+      width: 100%;
       margin: 0 0 1rem;
 
       border: none;
@@ -51,10 +51,10 @@ body {
   }
 }
 
-nav {
+.nav {
   margin-bottom: 1.5rem;
   
-  a {
+  .create-account, .log-in {
     color: $main-color;
     text-decoration: none;
   }

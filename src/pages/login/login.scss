@@ -1,3 +1,6 @@
-@import '/layout/scss/main';
 @import '/layout/scss/form';
 @import '/layout/scss/button/button_dark';
+
+.login-page {
+  @include flexbox-style(flex, center, center, initial, 100%);
+}

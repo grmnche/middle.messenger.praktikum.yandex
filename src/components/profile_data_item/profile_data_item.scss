@@ -1,0 +1,11 @@
+.data-item-container,
+.profile-footer a {
+  width: 510px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $dark-text-color;
+
+  p {
+    margin: 0.6rem 0;
+  }
+}
