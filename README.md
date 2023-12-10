@@ -6,14 +6,17 @@
 
 ## Прогресс
 
-Проект находится на стадии разработки UI.
+1. Разработка UI ✅
+2. Этап внедрения TypeScript, приведения приложения к шаблону MVC, компонентного подхода, валидации форм
 
 ## Установка
 
 - `npm install` — установка,
 - `npm run dev` — запуск версии для разработчика,
 - `npm run start` — сборка и запуск билда,
-- `npm run build` — сборка.
+- `npm run build` — сборка,
+- `npm run eslint` — eslint,
+- `npm run stylelint` — stylelint.
 
 ## **Описание кода**
 
@@ -22,19 +25,19 @@
 Разработка происходит в ветке Sprint (i), i - текущий этап разработки.
 
 **Pull request**
-[https://github.com/grmnche/middle.messenger.praktikum.yandex/pull/11]
+[https://github.com/grmnche/middle.messenger.praktikum.yandex/pull/12]
 
 **Netlify**
 [https://bucolic-salamander-26d639.netlify.app/]
 
 **Страницы**
-[Главная страница](src/index.html)
-[Ошибка400](src/pages/error/error400.html)
-[Ошибка500](src/pages/error/error500.html)
-[Вход](src/pages/login/login.html)
-[Регистрация](src/pages/registration/registration.html)
-[Изменение данных профиля](src/pages/profile/modules/change_profile_data/change_profile_data.html)
-[Изменение пароля](src/pages/profile/modules/change_password/change_profile_password.html)
-[Профиль](src/pages/profile/profile.html)
-[Чат](src/pages/chat/chat.html)
-[Модальные окна](src/pages/modals/modals.html)
+[Главная страница](src/pages/home/home.hbs)
+[Ошибка400](src/pages/error/error400/error400.hbs)
+[Ошибка500](src/pages/error/error500/error500.hbs)
+[Вход](src/pages/login/login.hbs)
+[Регистрация](src/pages/registration/registration.hbs)
+[Изменение данных профиля](src/pages/profile/modules/change_profile_data/change_profile_data.hbs)
+[Изменение пароля](src/pages/profile/modules/change_password/change_profile_password.hbs)
+[Профиль](src/pages/profile/profile.hbs)
+[Чат](src/pages/chat/chat.hbs)
+[Модальные окна](src/pages/modals/modals.hbs)

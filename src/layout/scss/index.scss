@@ -6,9 +6,19 @@ ul {
 }
 
 a {
-  color: white;
-  font-size: 2rem;
-  text-decoration: none;
   margin: 0 1rem;
   padding: 0;
+  color: white;
+  text-decoration: none;
+}
+
+.home-hav {
+  a {
+    font-size: 2rem;
+  }
+
+  button {
+    width: 140px;
+    height: 40px;
+  }
 }
