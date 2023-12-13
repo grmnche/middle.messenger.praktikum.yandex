@@ -15,7 +15,8 @@
 - `npm run dev` — запуск версии для разработчика,
 - `npm run start` — сборка и запуск билда,
 - `npm run build` — сборка,
-- `npm run lint` — линтеры.
+- `npm run eslint` — eslint,
+- `npm run stylelint` — stylelint.
 
 ## **Описание кода**
 

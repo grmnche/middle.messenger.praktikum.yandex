@@ -5,7 +5,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "lint": "eslint src --fix && stylelint **/*.scss --fix",
+    "eslint": "eslint src --fix",
+    "stylelint": "stylelint **/*.scss --fix",
     "start": "npm run build && node server.js",
     "dev": "vite",
     "build": "vite build",
