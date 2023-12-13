@@ -2,4 +2,5 @@
 **/*.min.js
 /node_modules
 server.js
-vite.config.js
+vite.config.ts
+vite-plugin-handlebars-precompile.ts
