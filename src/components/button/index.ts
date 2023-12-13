@@ -1,9 +1,9 @@
-import Block from '../../utils/Block';
-import template from './button.hbs';
+import Block from "../../utils/Block";
+import template from "./button.hbs";
 
 interface ButtonProps {
   label: string;
-  type?: 'submit' | 'button';
+  type?: "submit" | "button";
   class: string;
   onClick?: () => void;
   events: {

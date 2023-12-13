@@ -1,5 +1,5 @@
-import Block from '../../utils/Block';
-import template from './error.hbs';
+import Block from "../../utils/Block";
+import template from "./error.hbs";
 
 interface ErrorProps {
   errorNumber: string;

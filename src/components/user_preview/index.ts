@@ -1,5 +1,5 @@
-import Block from '../../utils/Block';
-import template from './user_preview.hbs';
+import Block from "../../utils/Block";
+import template from "./user_preview.hbs";
 
 interface UserPreviewProps {
   userName: string;

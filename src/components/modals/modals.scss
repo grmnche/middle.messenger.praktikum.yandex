@@ -1,8 +1,7 @@
 .modal {
+  padding: 0.5rem;
   background: $main-light;
   border-radius: 12px;
-
-  padding: 0.5rem;
 
   .action-btn {
     width: 3rem;
@@ -10,11 +9,13 @@
   }
 
   .modal-btn {
-    margin-right: 1rem;
-    background-size: cover;
-    background-color: transparent;
-    border: none;
     cursor: pointer;
+
+    margin-right: 1rem;
+
+    background-color: transparent;
+    background-size: cover;
+    border: none;
   }
 
   .add-photo-video-btn {

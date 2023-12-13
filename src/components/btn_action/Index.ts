@@ -1,5 +1,5 @@
-import Block from '../../utils/Block';
-import template from './btn_action.hbs';
+import Block from "../../utils/Block";
+import template from "./btn_action.hbs";
 
 interface BtnActionProps {
   actionName: string;

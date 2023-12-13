@@ -1,5 +1,5 @@
-import Block from '../../../utils/Block';
-import template from './user_action.hbs';
+import Block from "../../../utils/Block";
+import template from "./user_action.hbs";
 
 export class UserAction extends Block {
   render() {

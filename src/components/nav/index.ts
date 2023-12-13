@@ -1,65 +1,65 @@
-import Block from '../../utils/Block';
-import template from './nav.hbs';
-import { render } from '../../utils/render';
+import Block from "../../utils/Block";
+import template from "./nav.hbs";
+import { render } from "../../utils/render";
 
 export class Nav extends Block {
   constructor() {
     super({
-      type: 'button',
+      type: "button",
 
       buttons: [
         {
-          label: 'Chat',
+          label: "Chat",
           onClick: () => {
-            render('chat');
+            render("chat");
           },
         },
         {
-          label: 'Error400',
+          label: "Error400",
           onClick: () => {
-            render('error400');
+            render("error400");
           },
         },
         {
-          label: 'Error500',
+          label: "Error500",
           onClick: () => {
-            render('error500');
+            render("error500");
           },
         },
         {
-          label: 'Login',
+          label: "Login",
           onClick: () => {
-            render('login');
+            render("login");
           },
         },
         {
-          label: 'Registration',
+          label: "Registration",
           onClick: () => {
-            render('registration');
+            render("registration");
           },
         },
         {
-          label: 'Modals',
+          label: "Modals",
           onClick: () => {
-            render('modals');
+            render("modals");
           },
         },
         {
-          label: 'Profile',
+          label: "Profile",
           onClick: () => {
-            render('profile');
+            render("profile");
           },
         },
         {
-          label: 'Change profile data',
+          label: "Change profile data",
           onClick: () => {
-            render('changeProfileData');
+            render("changeProfileData");
           },
         },
         {
-          label: 'Change profile password',
+          label: "Change profile password",
           onClick: () => {
-            render('changeProfilePassword');
+            render("changeProfilePassword");
           },
         },
       ],

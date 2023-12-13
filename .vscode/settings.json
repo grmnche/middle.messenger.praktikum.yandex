@@ -2,5 +2,8 @@
     "html.completion.attributeDefaultValue": "singlequotes",
     "prettier.singleQuote": true,
     "path-autocomplete.useSingleBackslash": true,
-    "prettier.jsxSingleQuote": true
+    "prettier.jsxSingleQuote": true,
+    "CodeGPT.apiKey": "CodeGPT Plus",
+    "CodeGPT.Autocomplete.provider": "CodeGPT Plus - Plus",
+    "CodeGPT.Autocomplete.maxTokens": 50000
 }

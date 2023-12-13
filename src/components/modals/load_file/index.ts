@@ -1,5 +1,5 @@
-import Block from '../../../utils/Block';
-import template from './load_file.hbs';
+import Block from "../../../utils/Block";
+import template from "./load_file.hbs";
 
 interface LoadFileProps {
   loadingFileStatus: string;

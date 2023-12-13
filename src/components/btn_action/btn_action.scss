@@ -2,8 +2,8 @@
   @include flexbox-style(flex, start, center, row, auto);
 
   width: 15rem;
-  color: $color-accent;
   padding: 0.5rem;
+  color: $color-accent;
 
   .modal-btn {
     width: 2rem;

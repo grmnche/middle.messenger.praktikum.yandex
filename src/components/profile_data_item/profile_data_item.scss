@@ -1,8 +1,8 @@
 .data-item-container,
 .profile-footer a {
-  width: 510px;
   display: flex;
   justify-content: space-between;
+  width: 510px;
   border-bottom: 1px solid $dark-text-color;
 
   p {

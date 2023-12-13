@@ -1,32 +1,32 @@
 {
-  "parser": "@typescript-eslint/parser",
   "extends": [
-    "plugin:@typescript-eslint/recommended",
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
   "plugins": ["@typescript-eslint", "prettier"],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module",
-    "project": "./tsconfig.json"
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
   },
   "rules": {
-    "@typescript-eslint/no-unsafe-assignment": "error",
-    "@typescript-eslint/no-unused-vars": "error",
-    "indent": ["error", 2],
-    "prettier/prettier": ["error", { "endOfLine": "auto" }],
-    "import/no-unresolved": "off",
-    "import/no-extraneous-dependencies": "off",
-    "no-restricted-syntax": "off",
-    "@typescript-eslint/no-var-requires": "off",
+    "prettier/prettier": [
+      "warn",
+      { "endOfLine": "auto" },
+      { "trailingComma": "es5" }
+    ],
     "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/ban-ts-comment": "off",
-    "@typescript-eslint/no-empty-function": "off",
-    "@typescript-eslint/no-non-null-assertion": "off",
-    "@typescript-eslint/no-inferrable-types": "off",
-    "@typescript-eslint/no-empty-interface": "off",
-    "no-undef": "off",
-    "no-alert": "off"
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-this-alias": "off"
   }
 }

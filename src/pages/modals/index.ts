@@ -1,5 +1,5 @@
-import Block from '../../utils/Block';
-import template from './modals.hbs';
+import Block from "../../utils/Block";
+import template from "./modals.hbs";
 
 export class Modals extends Block {
   render() {

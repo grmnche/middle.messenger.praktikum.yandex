@@ -1,12 +1,12 @@
-import Block from '../../../utils/Block';
-import template from './error400.hbs';
+import Block from "../../../utils/Block";
+import template from "./error400.hbs";
 
 export class Error400 extends Block {
   constructor() {
     super({
       error: {
-        errorText: 'Sorry, wrong page...',
-        errorNumber: '400',
+        errorText: "Sorry, wrong page...",
+        errorNumber: "400",
       },
     });
   }

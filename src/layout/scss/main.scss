@@ -2,46 +2,49 @@
 @import './font';
 
 // Components
-@import '../../components/chat/chat_feed/chat_feed.scss';
-@import '../../components/chat/chat_list/chat_list.scss';
-@import '../../components/btn_action/btn_action.scss';
-@import '../../components/error/error.scss';
-@import '../../components/modals/modals.scss';
-@import '../../components/modals/load_file/load_file.scss';
-@import '../../components/profile_back_bar/profile_back_bar.scss';
-@import '../../components/profile_data_item/profile_data_item.scss';
-@import '../../components/user_avatar/user_avatar.scss';
-@import '../../components/user_preview/user_preview.scss';
+@import '../../components/chat/chat_feed/chat_feed';
+@import '../../components/chat/chat_list/chat_list';
+@import '../../components/btn_action/btn_action';
+@import '../../components/error/error';
+@import '../../components/modals/modals';
+@import '../../components/modals/load_file/load_file';
+@import '../../components/profile_back_bar/profile_back_bar';
+@import '../../components/profile_data_item/profile_data_item';
+@import '../../components/user_avatar/user_avatar';
+@import '../../components/user_preview/user_preview';
+@import '../../components/message/message';
+@import '../../components/chat/chat-preview/chat-preview';
 
 // Pages
-@import '../../pages/chat/chat.scss';
-@import '../../pages/login/login.scss';
-@import '../../pages/modals/modals.scss';
-@import '../../pages/profile/profile.scss';
-@import '../../pages/registration/registration.scss';
+@import '../../pages/chat/chat';
+@import '../../pages/login/login';
+@import '../../pages/modals/modals';
+@import '../../pages/profile/profile';
+@import '../../pages/registration/registration';
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
-  background-color: $main-color;
-  color: $text-color;
-  font-family: 'Roboto-Regular', sans-serif;
   height: 100vh;
+  font-family: Roboto-Regular, sans-serif;
+  color: $text-color;
+  background-color: $main-color;
 }
 
 #app {
   width: 100%;
   height: 100%;
 }
+
 .input-container {
   width: 80%;
   margin-inline: 1rem;
 
   input {
-    @include placeholder-style($light-text-color, 14px, 0rem);
+    @include placeholder-style($light-text-color, 14px, 0);
   }
 }

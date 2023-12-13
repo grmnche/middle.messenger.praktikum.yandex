@@ -1,5 +1,5 @@
-import Block from '../../utils/Block';
-import template from './profile_data_item.hbs';
+import Block from "../../utils/Block";
+import template from "./profile_data_item.hbs";
 
 interface ProfileDataItemProps {
   itemName: string;

@@ -1,8 +1,8 @@
 const METHODS = {
-  GET: 'GET',
-  POST: 'POST',
-  PUT: 'PUT',
-  DELETE: 'DELETE',
+  GET: "GET",
+  POST: "POST",
+  PUT: "PUT",
+  DELETE: "DELETE",
 };
 
 type Options = {
@@ -13,14 +13,14 @@ type Options = {
 };
 
 function queryStringify(data: { [key: string]: any }): string {
-  if (typeof data !== 'object') {
-    throw new Error('Data must be object');
+  if (typeof data !== "object") {
+    throw new Error("Data must be object");
   }
 
   const keys = Object.keys(data);
   return keys.reduce((result, key, index) => {
-    return `${result}${key}=${data[key]}${index < keys.length - 1 ? '&' : ''}`;
-  }, '?');
+    return `${result}${key}=${data[key]}${index < keys.length - 1 ? "&" : ""}`;
+  }, "?");
 }
 
 class HTTPTransport {
@@ -65,7 +65,7 @@ class HTTPTransport {
 
     return new Promise(function (resolve, reject) {
       if (!method) {
-        reject('No method');
+        reject("No method");
         return;
       }
 
@@ -82,19 +82,18 @@ class HTTPTransport {
         resolve(xhr);
       };
 
-      xhr.onabort = () => reject(new Error('User aborted request'));
-      xhr.onerror = () => reject(new Error('Network error occurred'));
-      xhr.ontimeout = () => reject(new Error('Request timed out'));
+      xhr.onabort = () => reject(new Error("User aborted request"));
+      xhr.onerror = () => reject(new Error("Network error occurred"));
+      xhr.ontimeout = () => reject(new Error("Request timed out"));
 
       xhr.timeout = timeout;
 
       if (isGet || !data) {
         xhr.send();
       } else {
-        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send(JSON.stringify(data));
       }
     });
   };
 }
-

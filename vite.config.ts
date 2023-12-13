@@ -9,24 +9,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'src/index.html'),
-        login: resolve(__dirname, 'src/pages/login/login.html'),
-        registration: resolve(
-          __dirname,
-          'src/pages/registration/registration.html',
-        ),
-        change_profile_data: resolve(
-          __dirname,
-          'src/pages/profile/modules/change_profile_data/change_profile_data.html',
-        ),
-        change_password: resolve(
-          __dirname,
-          'src/pages/profile/modules/change_password/change_profile_password.html',
-        ),
-        profile: resolve(__dirname, 'src/pages/profile/profile.html'),
-        chat: resolve(__dirname, 'src/pages/chat/chat.html'),
-        error400: resolve(__dirname, 'src/pages/error/error400.html'),
-        error500: resolve(__dirname, 'src/pages/error/error500.html'),
-        modals: resolve(__dirname, 'src/pages/modals/modals.html'),
       },
     },
   },

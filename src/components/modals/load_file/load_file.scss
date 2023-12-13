@@ -2,13 +2,13 @@
   @include flexbox-style(flex, center, center, column, 260px);
 
   width: 340px;
+  color: $main-color;
   background: $main-light;
   border-radius: 12px;
-  color: $main-color;
 
   p:first-child {
-    font-size: 20px;
     margin: 3rem 0;
+    font-size: 20px;
   }
 
   input[type='file'] {
@@ -17,8 +17,8 @@
 
   .custom-input-label {
     cursor: pointer;
-    text-decoration: underline;
     font-size: 1rem;
+    text-decoration: underline;
   }
 
   button {

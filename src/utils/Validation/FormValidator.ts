@@ -24,7 +24,11 @@ export class FormValidator {
     return regex.test(value);
   }
 
-  static validateMessage(value: string): boolean {
-    return value.trim() !== '';
+  static validateMessage(value: null | string): boolean {
+    if (value === null || value === undefined) {
+      return false;
+    }
+
+    return value.trim() !== "";
   }
 }

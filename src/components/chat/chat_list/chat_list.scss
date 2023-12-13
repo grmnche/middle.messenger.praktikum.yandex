@@ -1,23 +1,28 @@
 .chat-list {
+  @include flexbox-style(flex, initial, center, column, 100%);
   width: 20%;
   height: 100%;
   border-right: 1px solid $dark-text-color;
-  display: flex;
-  justify-content: center;
 
   form {
-    width: 90%;
     z-index: 1;
+    width: 90%;
+    height: 10%;
+
+    .input-container {
+      width: 100%;
+      margin-inline: auto;
+    }
 
     #message {
+      @include placeholder-style($light-text-color, 1rem, 1rem);
       width: 100%;
-      background: $main-light;
-      border-radius: 5px;
       height: 2rem;
       margin-top: 2rem;
-      border: none;
 
-      @include placeholder-style($light-text-color, 1rem, 1rem);
+      background: $main-light;
+      border: none;
+      border-radius: 5px;
     }
   }
 }

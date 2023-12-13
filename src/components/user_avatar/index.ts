@@ -1,5 +1,5 @@
-import Block from '../../utils/Block';
-import template from './user_avatar.hbs';
+import Block from "../../utils/Block";
+import template from "./user_avatar.hbs";
 
 interface UserAvatarProps {
   class: string;

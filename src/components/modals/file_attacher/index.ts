@@ -1,5 +1,5 @@
-import Block from '../../../utils/Block';
-import template from './file_attacher.hbs';
+import Block from "../../../utils/Block";
+import template from "./file_attacher.hbs";
 
 export class FileAttacher extends Block {
   render() {
