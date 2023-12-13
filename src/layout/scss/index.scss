@@ -1,4 +1,4 @@
-@import './variables';
+@import url('./variables');
 
 ul {
   @include flexbox-style(flex, center, center, row, 100vh);

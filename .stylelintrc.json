@@ -1,8 +1,7 @@
 {
   "extends": [
     "stylelint-config-standard",
-    "stylelint-config-clean-order",
-    "stylelint-config-standard-scss"
+    "stylelint-config-clean-order"
   ],
   "plugins": ["stylelint-order", "stylelint-scss"],
   "ignoreFiles": "**/*.{css,html,js,ts,ttf}",
