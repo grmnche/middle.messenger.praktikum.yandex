@@ -1,5 +1,5 @@
-@import url('/layout/scss/form');
-@import url('/layout/scss/button/button_dark');
+@import '/layout/scss/form';
+@import '/layout/scss/button/button_dark';
 
 .registration-page {
   @include flexbox-style(flex, center, center, column, 100%);
