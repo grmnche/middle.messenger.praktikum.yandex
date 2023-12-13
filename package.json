@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "eslint": "eslint src --fix",
-    "stylelint": "stylelint **/*.scss --fix --config-basedir=./.stylelintrc.json",
+    "stylelint": "stylelint **/*.scss --fix --config-basedir=./",
     "start": "npm run build && node server.js",
     "dev": "vite",
     "build": "vite build",
