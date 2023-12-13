@@ -24,7 +24,7 @@ class Block {
   public children: Record<string, Block>;
   private eventBus: () => EventBus;
   private _element: HTMLElement | null = null;
-  private _meta: { props: BlockProps };
+  _meta: { props: BlockProps };
 
   constructor(propsWithChildren: Record<string, any> = {}) {
     const eventBus = new EventBus();
@@ -75,13 +75,13 @@ class Block {
     this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
   }
 
-  protected init() {}
+  protected init() { }
 
   _componentDidMount() {
     this.componentDidMount();
   }
 
-  componentDidMount() {}
+  componentDidMount() { }
 
   public dispatchComponentDidMount() {
     this.eventBus().emit(Block.EVENTS.FLOW_CDM);
@@ -91,17 +91,14 @@ class Block {
     );
   }
 
-  private _componentDidUpdate(oldProps: any, newProps: any): boolean {
-    if (this.componentDidUpdate(oldProps, newProps)) {
+  private _componentDidUpdate(): boolean {
+    if (this.componentDidUpdate()) {
       this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
     }
     return true;
   }
 
-  protected componentDidUpdate(
-    oldProps: Record<string, (event: Event) => void>,
-    newProps: Record<string, (event: Event) => void>,
-  ): boolean {
+  protected componentDidUpdate(): boolean {
     return true;
   }
 

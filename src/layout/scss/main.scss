@@ -1,24 +1,24 @@
-@import url('./variables');
-@import url('./font');
+@import './variables';
+@import './font';
 
-@import url('../../components/chat/chat_feed/chat_feed');
-@import url('../../components/chat/chat_list/chat_list');
-@import url('../../components/btn_action/btn_action');
-@import url('../../components/error/error');
-@import url('../../components/modals/modals');
-@import url('../../components/modals/load_file/load_file');
-@import url('../../components/profile_back_bar/profile_back_bar');
-@import url('../../components/profile_data_item/profile_data_item');
-@import url('../../components/user_avatar/user_avatar');
-@import url('../../components/user_preview/user_preview');
-@import url('../../components/message/message');
-@import url('../../components/chat/chat-preview/chat-preview');
+@import '../../components/chat/chat_feed/chat_feed';
+@import '../../components/chat/chat_list/chat_list';
+@import '../../components/btn_action/btn_action';
+@import '../../components/error/error';
+@import '../../components/modals/modals';
+@import '../../components/modals/load_file/load_file';
+@import '../../components/profile_back_bar/profile_back_bar';
+@import '../../components/profile_data_item/profile_data_item';
+@import '../../components/user_avatar/user_avatar';
+@import '../../components/user_preview/user_preview';
+@import '../../components/message/message';
+@import '../../components/chat/chat-preview/chat-preview';
 
-@import url('../../pages/chat/chat');
-@import url('../../pages/login/login');
-@import url('../../pages/modals/modals');
-@import url('../../pages/profile/profile');
-@import url('../../pages/registration/registration');
+@import '../../pages/chat/chat';
+@import '../../pages/login/login';
+@import '../../pages/modals/modals';
+@import '../../pages/profile/profile';
+@import '../../pages/registration/registration';
 
 * {
   box-sizing: border-box;
