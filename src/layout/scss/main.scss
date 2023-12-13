@@ -1,7 +1,7 @@
 @import url('./variables');
 @import url('./font');
 
-@import '../../components/chat/chat_feed/chat_feed';
+@import url('../../components/chat/chat_feed/chat_feed');
 @import url('../../components/chat/chat_list/chat_list');
 @import url('../../components/btn_action/btn_action');
 @import url('../../components/error/error');
@@ -14,7 +14,7 @@
 @import url('../../components/message/message');
 @import url('../../components/chat/chat-preview/chat-preview');
 
-@import '../../pages/chat/chat';
+@import url('../../pages/chat/chat');
 @import url('../../pages/login/login');
 @import url('../../pages/modals/modals');
 @import url('../../pages/profile/profile');
