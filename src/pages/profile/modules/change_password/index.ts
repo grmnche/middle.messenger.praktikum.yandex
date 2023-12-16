@@ -4,7 +4,6 @@ import {
   checkValidation,
   focusoutValidation,
 } from '../../../../utils/Validation/Validation';
-import { validateField } from '../../../../utils/Validation/Validation';
 
 export class ChangeProfilePassword extends Block {
   constructor() {
