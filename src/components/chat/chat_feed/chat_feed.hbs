@@ -10,7 +10,6 @@
     </div>
   </div>
 
-  
   <div class='chat-feed__footer'>
     {{{Button class='add-files-btn'}}}
     <form>
@@ -20,6 +19,8 @@
         type='text'
         placeholder='Message'
         className='chat-feed-input'
+        onFocusout=this.onFocusout
+        inputError=this.inputError
       }}}
       {{{Button class='send-message-btn' type=../type onClick=this.onClickSubmit}}}
     </form>

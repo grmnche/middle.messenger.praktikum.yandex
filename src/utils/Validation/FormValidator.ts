@@ -29,6 +29,6 @@ export class FormValidator {
       return false;
     }
 
-    return value.trim() !== "";
+    return value.trim() !== '';
   }
 }

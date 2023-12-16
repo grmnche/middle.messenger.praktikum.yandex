@@ -6,12 +6,19 @@ interface ProfileDataItemProps {
   type: string;
   name: string;
   placeholder: string;
+  onFocusout?: () => void;
+  events: {
+    focusout: () => void;
+  };
 }
 
 export class ProfileDataItem extends Block {
   constructor(props: ProfileDataItemProps) {
     super({
       ...props,
+      events: {
+        focusout: props.onFocusout,
+      },
     });
   }
 

@@ -8,43 +8,16 @@
   <div class='data-container'>
     <form>
       <div>
-        {{{ProfileDataItem
-          name='email'
-          type='text'
-          itemName='Email'
-          placeholder='winteriscoming@yandex.ru'
-        }}}
-        {{{ProfileDataItem
-          name='login'
-          type='text'
-          itemName='Login'
-          placeholder='johnsnow'
-        }}}
-        {{{ProfileDataItem
-          name='first_name'
-          type='text'
-          itemName='Name'
-          placeholder='John'
-        }}}
-        {{{ProfileDataItem
-          name='second_name'
-          type='text'
-          itemName='Surname'
-          placeholder='Snow'
-        }}}
-        {{{ProfileDataItem
-          name='login'
-          type='text'
-          itemName='Chatname'
-          placeholder='John'
-        }}}
-        {{{ProfileDataItem
-          name='phone'
-          type='text'
-          itemName='Phone'
-          placeholder='+7 (xxx) xxx xx
-        xx'
-        }}}
+        {{#each dataItems}}
+          {{{ProfileDataItem
+            type=this.type
+            name=this.name
+            itemName=this.itemName
+            placeholder=this.placeholder
+            inputError=this.inputError
+            onFocusout=this.onFocusout
+          }}}
+        {{/each}}
       </div>
 
       {{{Button

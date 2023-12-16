@@ -1,6 +1,5 @@
 import Block from "../../utils/Block";
 import template from "./chat.hbs";
-import { addBlurListeners } from "../../utils/Validation/Validation";
 
 export class Chat extends Block {
   constructor() {
@@ -10,10 +9,6 @@ export class Chat extends Block {
         errorNumber: "500",
       },
     });
-  }
-
-  _componentDidMount() {
-    addBlurListeners();
   }
 
   render() {

@@ -1,5 +1,5 @@
-import { EventBus } from "./EventBus";
-import { nanoid } from "nanoid";
+import { EventBus } from './EventBus';
+import { nanoid } from 'nanoid';
 
 interface BlockProps {
   events?: Record<string, (event: Event) => void>;
@@ -12,10 +12,10 @@ interface BlockChild {
 
 class Block {
   static EVENTS = {
-    INIT: "init",
-    FLOW_CDM: "flow:component-did-mount",
-    FLOW_CDU: "flow:component-did-update",
-    FLOW_RENDER: "flow:render",
+    INIT: 'init',
+    FLOW_CDM: 'flow:component-did-mount',
+    FLOW_CDU: 'flow:component-did-update',
+    FLOW_RENDER: 'flow:render',
   };
 
   public id = nanoid(7);
@@ -63,6 +63,14 @@ class Block {
     });
   }
 
+  _removeEvents() {
+    const { events = {} } = this.props;
+
+    Object.keys(events).forEach((eventName) => {
+      this._element?.removeEventListener(eventName, events[eventName]);
+    });
+  }
+
   _registerEvents(eventBus: EventBus) {
     eventBus.on(Block.EVENTS.INIT, this._init.bind(this));
     eventBus.on(Block.EVENTS.FLOW_CDM, this._componentDidMount.bind(this));
@@ -75,13 +83,13 @@ class Block {
     this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
   }
 
-  protected init() { }
+  protected init() {}
 
   _componentDidMount() {
     this.componentDidMount();
   }
 
-  componentDidMount() { }
+  componentDidMount() {}
 
   public dispatchComponentDidMount() {
     this.eventBus().emit(Block.EVENTS.FLOW_CDM);
@@ -118,6 +126,8 @@ class Block {
     const fragment = this.render();
     const newElement = fragment.firstElementChild as HTMLElement;
 
+    this._removeEvents();
+
     if (this._element) {
       this._element.replaceWith(newElement);
     }
@@ -135,7 +145,7 @@ class Block {
       __refs: this.refs,
     };
     const html = template(contextAndStubs);
-    const temp: HTMLElement | any = document.createElement("template");
+    const temp: HTMLElement | any = document.createElement('template');
 
     temp.innerHTML = html;
 
@@ -160,7 +170,7 @@ class Block {
     return new Proxy(props, {
       get(target, prop: any) {
         const value = target[prop];
-        return typeof value === "function" ? value.bind(target) : value;
+        return typeof value === 'function' ? value.bind(target) : value;
       },
 
       set(target, prop: any, value) {
@@ -175,7 +185,7 @@ class Block {
       },
 
       deleteProperty() {
-        throw new Error("Access not allowed");
+        throw new Error('Access not allowed');
       },
     });
   }
@@ -185,11 +195,11 @@ class Block {
   }
 
   show() {
-    this.getContent()!.style.display = "block";
+    this.getContent()!.style.display = 'block';
   }
 
   hide() {
-    this.getContent()!.style.display = "none";
+    this.getContent()!.style.display = 'none';
   }
 }
 

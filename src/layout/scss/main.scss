@@ -13,6 +13,7 @@
 @import '../../components/user_preview/user_preview';
 @import '../../components/message/message';
 @import '../../components/chat/chat-preview/chat-preview';
+@import '../../components/input/input';
 
 @import '../../pages/chat/chat';
 @import '../../pages/login/login';
@@ -44,5 +45,20 @@ body {
 
   input {
     @include placeholder-style($light-text-color, 14px, 0);
+  }
+}
+
+.input-error {
+  position: absolute;
+  top: 35px;
+
+  display: none;
+  z-index: 5;
+
+  color: red;
+  font-size: 10px;
+
+  &.show {
+    display: block;
   }
 }

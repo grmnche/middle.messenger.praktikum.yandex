@@ -1,46 +1,30 @@
-import { FormValidator } from "./FormValidator";
+import { FormValidator } from './FormValidator';
 
-let listenersAdded = false;
-
-export const addBlurListeners = () => {
-  if (listenersAdded) return;
-
-  const inputs = document.querySelectorAll("input");
-
-  inputs.forEach((input) => {
-    input.addEventListener("focusout", () => {
-      validateField(input);
-    });
-  });
-
-  listenersAdded = true;
-};
-
-const validateField = (input: HTMLInputElement) => {
+export const validateField = (input: HTMLInputElement) => {
   const value = input.value;
   const fieldName = input.name;
 
   let isValid = false;
 
   switch (fieldName) {
-    case "login":
+    case 'login':
       isValid = FormValidator.validateLogin(value);
       break;
-    case "password":
+    case 'password':
       isValid = FormValidator.validatePassword(value);
       break;
-    case "email":
+    case 'email':
       isValid = FormValidator.validateEmail(value);
       break;
-    case "first_name":
-    case "second_name":
+    case 'first_name':
+    case 'second_name':
       isValid = FormValidator.validateName(value);
       break;
-    case "phone":
+    case 'phone':
       isValid = FormValidator.validatePhone(value);
       break;
-    case "search":
-    case "message":
+    case 'search':
+    case 'message':
       isValid = FormValidator.validateMessage(value);
       break;
     default:
@@ -50,9 +34,15 @@ const validateField = (input: HTMLInputElement) => {
 
   if (!isValid) {
     console.error(`Неверный формат для "${fieldName}"`);
+    input.nextElementSibling?.classList.add('show');
   }
 
   return isValid;
+};
+
+export const focusoutValidation = (event: FocusEvent) => {
+  const input = event.target as HTMLInputElement;
+  validateField(input);
 };
 
 interface FormData {
@@ -63,14 +53,14 @@ export const checkValidation = (event: Event): void => {
   event.preventDefault();
 
   const button = event.target as HTMLButtonElement;
-  const form = button.closest("form");
+  const form = button.closest('form');
 
   if (!form) {
-    console.error("Форма не найдена");
+    console.error('Форма не найдена');
     return;
   }
 
-  const inputs = form.querySelectorAll("input");
+  const inputs = form.querySelectorAll('input');
   let isFormValid = true;
   const formData: FormData = {};
 
@@ -93,6 +83,6 @@ export const checkValidation = (event: Event): void => {
   if (isFormValid) {
     console.log(formData);
   } else {
-    console.error("Невалидные данные");
+    console.error('Невалидные данные');
   }
 };

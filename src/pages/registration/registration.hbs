@@ -2,27 +2,15 @@
   <div class='form registration-form'>
     <h2>Registration</h2>
     <form>
-      {{{Input labelName='Email' type='email' name='email' text='Email'}}}
-      {{{Input labelName='Login' type='text' name='login' text='Login'}}}
-      {{{Input
-        labelName='First name'
-        type='text'
-        name='first_name'
-        text='Name'
-      }}}
-      {{{Input
-        labelName='Second name'
-        type='text'
-        name='second_name'
-        text='Surname'
-      }}}
-      {{{Input labelName='Phone' type='text' name='phone' text='Phone'}}}
-      {{{Input
-        labelName='Password'
-        type='password'
-        name='password'
-        text='Password'
-      }}}
+      {{#each inputs}}
+        {{{Input
+          labelName=this.labelName
+          type=this.type
+          name=this.name
+          inputError=this.inputError
+          onFocusout=this.onFocusout
+        }}}
+      {{/each}}
 
       {{{Button
         class='button button-dark'
