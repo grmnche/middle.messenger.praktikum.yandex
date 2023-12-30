@@ -1,27 +1,21 @@
-import Block from "../../utils/Block";
-import template from "./button.hbs";
+import Block from '../../utils/Block';
+import template from './button.hbs';
 
 interface ButtonProps {
-  label: string;
-  type?: "submit" | "button";
-  class: string;
-  onClick?: () => void;
-  events: {
+  label?: string;
+  type?: string;
+  class?: string;
+  events?: {
     click: () => void;
   };
 }
 
-export class Button extends Block {
+export class Button extends Block<ButtonProps> {
   constructor(props: ButtonProps) {
-    super({
-      ...props,
-      events: {
-        click: props.onClick,
-      },
-    });
+    super({ type: 'button', ...props });
   }
 
   render() {
-    return this.compile(template, this.props);
+    return this.compile(template, {...this.props});
   }
 }

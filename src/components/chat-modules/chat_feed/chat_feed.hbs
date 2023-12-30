@@ -1,0 +1,30 @@
+<div class='chat-feed'>
+  {{#if selectedChat}}
+    <div class='chat-feed__header'>
+      {{{userPreview}}}
+      {{{chatSettingsBtn}}}
+    </div>
+
+    <div class='chat-feed__main'>
+      <div class='messages'>
+        {{#each messages}}
+          {{{this}}}
+        {{/each}}
+      </div>
+    </div>
+    <div class='chat-feed__footer'>
+      {{{addFilesBtn}}}
+
+      <form>
+        {{{messageField}}}
+        <span class='input-error'>{{inputError}}</span>
+
+        {{{sendMessageBtn}}}
+      </form>
+
+    </div>
+
+  {{else}}
+    Выберите чат
+  {{/if}}
+</div>

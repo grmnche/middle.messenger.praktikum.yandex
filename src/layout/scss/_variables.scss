@@ -7,19 +7,19 @@ $light-text-color: #999;
 $main-light: #f9f9f9;
 $color-accent: #444c60;
 
-@mixin flexbox-style(
-  $display,
-  $justify-content,
-  $align-items,
-  $flex-direction,
-  $height
-) {
-  display: $display;
-  flex-direction: $flex-direction;
-  align-items: $align-items;
-  justify-content: $justify-content;
-
+@mixin flexbox($justify-content, $align-items, $flex-direction, $height, $gap) {
+  display: flex;
+  @if $justify-content != initial {
+    justify-content: $justify-content;
+  }
+  @if $align-items != initial {
+    align-items: $align-items;
+  }
+  @if $flex-direction != row {
+    flex-direction: $flex-direction;
+  }
   height: $height;
+  gap: $gap;
 }
 
 @mixin placeholder-style($color, $font-size, $padding) {

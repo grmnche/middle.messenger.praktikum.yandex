@@ -1,20 +1,17 @@
-import Block from "../../utils/Block";
-import template from "./message.hbs";
+import Block from '../../utils/Block';
+import template from './message.hbs';
 
 interface MessageProps {
-  messageText: string;
-  messageTime: string;
-  whoseMessage: string;
+  content?: string;
+  isMine?: boolean;
 }
 
-export class Message extends Block {
+export class Message extends Block<MessageProps> {
   constructor(props: MessageProps) {
-    super({
-      ...props,
-    });
+    super(props);
   }
 
-  render() {
-    return this.compile(template, this.props);
+  protected render(): DocumentFragment {
+    return this.compile(template, { ...this.props });
   }
 }

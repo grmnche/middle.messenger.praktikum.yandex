@@ -1,0 +1,23 @@
+<div class='chat-list'>
+  <form>
+    <div class='input-container {{className}}'>
+      <label class='custom-input-label' for='{{name}}'>{{label}}</label>
+      {{{search}}}
+      <span class='input-error'>{{inputError}}</span>
+    </div>
+  </form>
+
+  <div class='profile-link'>
+    {{{profileLink}}}
+  </div>
+
+  <aside>
+    {{#if isLoaded}}
+      {{#each chats}}
+        {{{this}}}
+      {{/each}}
+    {{else}}
+      Loading...
+    {{/if}}
+  </aside>
+</div>

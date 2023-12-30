@@ -2,9 +2,9 @@ import Block from "../../utils/Block";
 import template from "./user_avatar.hbs";
 
 interface UserAvatarProps {
-  class: string;
+  class?: string;
   src: string;
-  userName: string;
+  userName?: string;
 }
 
 export class UserAvatar extends Block {

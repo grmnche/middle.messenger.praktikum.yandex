@@ -2,5 +2,9 @@
 @import '/layout/scss/button/button_dark';
 
 .login-page {
-  @include flexbox-style(flex, center, center, initial, 100%);
+  @include flexbox(center, center, initial, 100%, 0);
+
+  .input-container {
+    width: 80%;
+  }
 }

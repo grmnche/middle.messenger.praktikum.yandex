@@ -1,5 +1,5 @@
 .btn-with-action {
-  @include flexbox-style(flex, start, center, row, auto);
+  @include flexbox(start, center, row, auto, 0);
 
   width: 15rem;
   padding: 0.5rem;

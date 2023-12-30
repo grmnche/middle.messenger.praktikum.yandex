@@ -1,29 +1,28 @@
 <main class='profile'>
 
-  {{{ProfileBackBar}}}
+  {{{profileBackBar}}}
 
-  {{{UserAvatar class='user-avatar' userName='John'}}}
+  {{{userAvatar}}}
 
   <div class='data-container'>
     <form>
-      {{#each dataItems}}
-          {{{ProfileDataItem
-            type=this.type
-            name=this.name
-            itemName=this.itemName
-            placeholder=this.placeholder
-            inputError=this.inputError
-            onFocusout=this.onFocusout
-          }}}
-        {{/each}}
+      {{#each fields}}
+        <div class='input-container {{className}}'>
+          {{{this}}}
+          <span class='input-error'>{{inputError}}</span>
+        </div>
+      {{/each}}
     </form>
+
+    <div class='profile-footer'>
+      <nav>
+        {{{changeInfo}}}
+        {{{changePassword}}}
+
+        {{{logoutButton}}}
+
+      </nav>
+    </div>
   </div>
 
-  <div class='profile-footer'>
-    <nav>
-      <a href='#'>Change info</a>
-      <a href='#'>Change password</a>
-      <a href='#'>Logout</a>
-    </nav>
-  </div>
 </main>

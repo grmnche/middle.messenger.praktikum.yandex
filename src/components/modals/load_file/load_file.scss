@@ -1,5 +1,5 @@
 .load-files-modal {
-  @include flexbox-style(flex, center, center, column, 260px);
+  @include flexbox(center, center, column, 260px, 0);
 
   width: 340px;
   color: $main-color;
@@ -26,6 +26,6 @@
   }
 
   form {
-    @include flexbox-style(flex, center, center, column, 260px);
+    @include flexbox(center, center, column, 260px, 0);
   }
 }

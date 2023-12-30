@@ -1,30 +1,49 @@
 <main class='change-profile-data'>
   <link rel='stylesheet' href='../../profile.scss' />
 
-  {{{ProfileBackBar}}}
+  {{{profileBackBar}}}
 
-  {{{UserAvatar class='user-avatar' src='/images/avatar.png'}}}
+  {{{userAvatar}}}
 
   <div class='data-container'>
     <form>
-      <div>
-        {{#each dataItems}}
-          {{{ProfileDataItem
-            type=this.type
-            name=this.name
-            itemName=this.itemName
-            placeholder=this.placeholder
-            inputError=this.inputError
-            onFocusout=this.onFocusout
-          }}}
-        {{/each}}
-      </div>
+        <div class='input-container {{className}}'>
+          <span>Name</span>
+          {{{name}}}
+          <span class='input-error'>{{nameError}}</span>
+        </div>
 
-      {{{Button
-        class='button button-light profile-button'
-        label='Save'
-        onClick=this.onClickSubmit
-      }}}
+        <div class='input-container {{className}}'>
+          <span>Surname</span>
+          {{{surname}}}
+          <span class='input-error'>{{nameError}}</span>
+        </div>
+
+        <div class='input-container {{className}}'>
+          <span>Login</span>
+          {{{login}}}
+          <span class='input-error'>{{loginError}}</span>
+        </div>
+
+        <div class='input-container {{className}}'>
+          <span>Email</span>
+          {{{email}}}
+          <span class='input-error'>{{emailError}}</span>
+        </div>
+
+        <div class='input-container {{className}}'>
+          <span>Chat name</span>
+          {{{chatName}}}
+          <span class='input-error'>{{loginError}}</span>
+        </div>
+
+        <div class='input-container {{className}}'>
+          <span>Phone</span>
+          {{{phone}}}
+          <span class='input-error'>{{phoneError}}</span>
+        </div>
+
+      {{{button}}}
     </form>
   </div>
 

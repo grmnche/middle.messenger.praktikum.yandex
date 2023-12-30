@@ -41,6 +41,7 @@ export const validateField = (input: HTMLInputElement) => {
 };
 
 export const focusoutValidation = (event: FocusEvent) => {
+  console.log('f');
   const input = event.target as HTMLInputElement;
   validateField(input);
 };

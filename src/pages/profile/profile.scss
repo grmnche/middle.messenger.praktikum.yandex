@@ -1,16 +1,35 @@
 .profile,
 .change-profile-password,
 .change-profile-data {
-  @include flexbox-style(flex, center, center, column, 90%);
+  @include flexbox(center, center, column, 90%, 0);
   position: relative;
+}
+
+.profile {
+  .data-item-container {
+    margin: 0;
+  }
+
+  input {
+    pointer-events: none;
+  }
 }
 
 .data-container,
 .password-data-container {
-  margin-top: 9rem;
+  margin-top: 12rem;
+  width: 35%;
+
+  .input-error {
+    top: 28px;
+  }
+
+  .input-container {
+    @include flexbox(space-between, center, row, auto, 0);
+  }
 
   form {
-    @include flexbox-style(flex, center, center, column, 90%);
+    @include flexbox(center, center, column, 90%, 0);
   }
 
   div:last-child {
@@ -20,23 +39,31 @@
 
 .profile {
   .data-container {
-    margin-top: 20rem;
+    margin-top: 18rem;
   }
 }
 
 .profile-footer {
-  flex-direction: column;
-  margin-top: 2rem;
+  nav {
+    @include flexbox(initial, self-start, column, auto, 0);
 
-  a {
     padding: 0.6rem 0;
     color: $text-color;
     text-decoration: none;
+  }
+  .logout-btn,
+  .change-info-btn,
+  .change-password-btn {
+    color: $text-color;
+    font-size: 1rem;
+    margin: 0.6rem 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
 
-    &:nth-child(3) {
-      color: red;
-      border-bottom: none;
-    }
+  .logout-btn {
+    color: red;
   }
 }
 

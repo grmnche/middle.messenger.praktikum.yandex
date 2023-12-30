@@ -1,5 +1,5 @@
 .back-bar {
-  @include flexbox-style(flex, center, center, column, 100vh);
+  @include flexbox(center, center, column, 100vh, 0);
 
   position: absolute;
   top: 0;
