@@ -51,8 +51,6 @@ export class AuthController {
       console.error(e.message);
     }
   }
-
-  // New
 }
 
 export default new AuthController();

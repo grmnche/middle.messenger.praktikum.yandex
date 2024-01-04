@@ -117,6 +117,7 @@ class Block<P extends Record<string, any> = any> {
     }
   }
 
+  // @ts-expect-error error
   protected componentDidUpdate(oldProps: P, newProps: P) {
     return true;
   }

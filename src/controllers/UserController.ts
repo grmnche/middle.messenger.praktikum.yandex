@@ -1,7 +1,7 @@
-import API, { UserAPI } from '../api/UserApi';
-import store from '../utils/Store';
-import router from '../utils/Router';
-import { User } from '../api/AuthAPI';
+import API, { UserAPI } from "../api/UserApi";
+import store from "../utils/Store";
+import router from "../utils/Router";
+import { User } from "../api/AuthAPI";
 
 export class UserController {
   private readonly api: UserAPI;
@@ -16,7 +16,7 @@ export class UserController {
       const user = state.user as User;
 
       if (!user || !user.id) {
-        throw new Error('User ID is not available');
+        throw new Error("User ID is not available");
       }
 
       const updatedUser: any = { ...user };
@@ -25,16 +25,16 @@ export class UserController {
         if (
           Object.prototype.hasOwnProperty.call(data, key) &&
           data[key] !== undefined &&
-          data[key] !== ''
+          data[key] !== ""
         ) {
           updatedUser[key] = data[key];
         }
       }
 
       const userData = await this.api.update(updatedUser);
-      console.log('resp: ', userData);
+      console.log("resp: ", userData);
 
-      router.go('/profile');
+      router.go("/profile");
     } catch (e: any) {
       console.error(e.message);
     }
@@ -44,9 +44,9 @@ export class UserController {
     try {
       await this.api.updatePassword(data.oldPassword, data.newPassword);
 
-      alert('Password updated successfully');
+      alert("Password updated successfully");
 
-      router.go('/profile');
+      router.go("/profile");
     } catch (e: any) {
       console.error(e.message);
     }
@@ -58,13 +58,13 @@ export class UserController {
 
     try {
       const avatarUploaded = await this.api.uploadAvatar(avatar);
-      console.log('avatar: ', avatarUploaded);
+      console.log("avatar: ", avatarUploaded);
 
       const getAvatar = this.api.getResources(user.avatar);
-      console.log('getAvatar: ', getAvatar);
-      alert('File uploaded successfully');
+      console.log("getAvatar: ", getAvatar);
+      alert("File uploaded successfully");
     } catch (e: any) {
-      console.error('File upload failed:', e.message);
+      console.error("File upload failed:", e.message);
     }
   }
 
@@ -74,11 +74,12 @@ export class UserController {
 
     try {
       const getAvatar = this.api.getResources(user.avatar);
-      console.log('getAvatar: ', getAvatar);
+      console.log("getAvatar: ", getAvatar);
 
       return getAvatar;
     } catch (e: any) {
-      console.error('File upload failed:', e.message);
+      console.error("File upload failed:", e.message);
+      return null;
     }
   }
 }

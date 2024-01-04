@@ -28,7 +28,7 @@
 Разработка происходит в ветке Sprint (i), i - текущий этап разработки.
 
 **Pull request**
-[https://github.com/grmnche/middle.messenger.praktikum.yandex/pull/13]
+[https://github.com/grmnche/middle.messenger.praktikum.yandex/pull/14]
 
 **Netlify**
 [https://bucolic-salamander-26d639.netlify.app/]

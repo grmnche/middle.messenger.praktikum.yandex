@@ -44,10 +44,7 @@ class ChatsListBase extends Block<ChatsListProps> {
     });
   }
 
-  protected componentDidUpdate(
-    oldProps: ChatsListProps,
-    newProps: ChatsListProps,
-  ): boolean {
+  protected componentDidUpdate(newProps: ChatsListProps): boolean {
     this.children.chats = this.createChats(newProps);
 
     return true;

@@ -1,5 +1,5 @@
-import Block from '../../utils/Block';
-import template from './message.hbs';
+import Block from "../../utils/Block";
+import template from "./message.hbs";
 
 interface MessageProps {
   content?: string;
@@ -13,6 +13,6 @@ export class Message extends Block<MessageProps> {
   }
 
   protected render(): DocumentFragment {
-    return this.compile(template, this.props );
+    return this.compile(template, this.props);
   }
 }

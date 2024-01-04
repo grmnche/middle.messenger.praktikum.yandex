@@ -1,47 +1,47 @@
-import Block from '../../utils/Block';
-import template from './login.hbs';
-import { Input } from '../../components/input';
-import { Button } from '../../components/button';
-import AuthController from '../../controllers/AuthController';
-import { SignupData } from '../../api/AuthAPI';
-import { Link } from '../../components/link';
+import Block from "../../utils/Block";
+import template from "./login.hbs";
+import { Input } from "../../components/input";
+import { Button } from "../../components/button";
+import AuthController from "../../controllers/AuthController";
+import { SignupData } from "../../api/AuthAPI";
+import { Link } from "../../components/link";
 
 export class Login extends Block {
   constructor() {
     super({
       loginError:
-        'Use only letters, numbers, hyphens and underscores. Length must be from 3 to 20 characters',
+        "Use only letters, numbers, hyphens and underscores. Length must be from 3 to 20 characters",
       passwordError:
-        'At least one capital letter, one number and be between 8 and 40 characters long',
+        "At least one capital letter, one number and be between 8 and 40 characters long",
     });
   }
 
   init() {
     this.children.login = new Input({
-      label: 'Login',
-      name: 'login',
-      type: 'text',
-      placeholder: 'Login',
+      label: "Login",
+      name: "login",
+      type: "text",
+      placeholder: "Login",
     });
 
     this.children.password = new Input({
-      label: 'Password',
-      name: 'password',
-      type: 'password',
-      placeholder: 'Password',
+      label: "Password",
+      name: "password",
+      type: "password",
+      placeholder: "Password",
     });
 
     this.children.button = new Button({
-      label: 'Войти',
-      class: 'btn btn-dark',
+      label: "Войти",
+      class: "btn btn-dark",
       events: {
         click: () => this.onSubmit(),
       },
     });
 
     this.children.link = new Link({
-      label: 'Create account',
-      to: '/sign-up',
+      label: "Create account",
+      to: "/sign-up",
     });
   }
 
@@ -53,7 +53,7 @@ export class Login extends Block {
     const isValid = inputs.every((input) => input.onValidate());
 
     if (isValid) {
-      console.log('data is valid');
+      console.log("data is valid");
       const values = inputs.map((input) => [input.getName(), input.getValue()]);
 
       const data = Object.fromEntries(values);
