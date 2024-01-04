@@ -34,13 +34,11 @@
 [https://bucolic-salamander-26d639.netlify.app/]
 
 **Страницы**
-[Главная страница](src/pages/home/home.hbs)
 [Ошибка400](src/pages/error/error400/error400.hbs)
 [Ошибка500](src/pages/error/error500/error500.hbs)
 [Вход](src/pages/login/login.hbs)
 [Регистрация](src/pages/registration/registration.hbs)
-[Изменение данных профиля](src/pages/profile/modules/change_profile_data/change_profile_data.hbs)
-[Изменение пароля](src/pages/profile/modules/change_password/change_profile_password.hbs)
+[Изменение данных профиля](src/pages/profile/modules/settings/settings.hbs)
+[Изменение пароля](src/pages/profile/modules/settings-password/settings-password.hbs)
 [Профиль](src/pages/profile/profile.hbs)
-[Чат](src/pages/chat/chat.hbs)
-[Модальные окна](src/pages/modals/modals.hbs)
+[Чат](src/pages/messenger/messenger.hbs)
