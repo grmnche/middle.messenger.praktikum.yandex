@@ -9,10 +9,17 @@
 }
 
 .avatar-container {
+  cursor: pointer;
+
   position: absolute;
   top: 10rem;
+
   width: 130px;
   height: 130px;
+
+  &:hover {
+    opacity: 0.8;
+  }
 
   span {
     position: absolute;
