@@ -1,10 +1,10 @@
-import Block from '../../utils/Block';
-import { validateField } from '../../utils/Validation/Validation';
-import template from './profile-field.hbs';
+import Block from "../../utils/Block";
+import { validateField } from "../../utils/Validation/Validation";
+import template from "./profile-field.hbs";
 
 interface profileFieldProps {
   name: string | undefined;
-  value: string | number;
+  value: string | number | undefined;
   inputName?: string;
   events?: {
     focusout: (event: FocusEvent) => void;
@@ -22,7 +22,7 @@ export class profileField extends Block<profileFieldProps> {
   }
 
   public onValidate() {
-    const input = this.element?.querySelector('input');
+    const input = this.element?.querySelector("input");
     if (input) {
       return validateField(input);
     } else {

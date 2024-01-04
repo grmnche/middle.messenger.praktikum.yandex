@@ -1,7 +1,7 @@
 .profile,
 .change-profile-password,
 .change-profile-data {
-  @include flexbox(center, center, column, 90%, 0);
+  @include flexbox(center, center, column, 100%, 0);
   position: relative;
 }
 
@@ -17,8 +17,8 @@
 
 .data-container,
 .password-data-container {
-  margin-top: 12rem;
   width: 35%;
+  margin-top: 12rem;
 
   .input-error {
     top: 28px;
@@ -37,12 +37,6 @@
   }
 }
 
-.profile {
-  .data-container {
-    margin-top: 18rem;
-  }
-}
-
 .profile-footer {
   nav {
     @include flexbox(initial, self-start, column, auto, 0);
@@ -51,15 +45,19 @@
     color: $text-color;
     text-decoration: none;
   }
+
   .logout-btn,
   .change-info-btn,
   .change-password-btn {
-    color: $text-color;
-    font-size: 1rem;
-    margin: 0.6rem 0;
-    border: none;
-    background-color: transparent;
     cursor: pointer;
+
+    margin: 0.6rem 0;
+
+    font-size: 1rem;
+    color: $text-color;
+
+    background-color: transparent;
+    border: none;
   }
 
   .logout-btn {
@@ -80,5 +78,5 @@
 
 .profile-button {
   position: absolute;
-  bottom: 3rem !important;
+  bottom: 8rem !important;
 }

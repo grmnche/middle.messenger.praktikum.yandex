@@ -1,9 +1,12 @@
-<div class='load-files-modal'>
-  <p>{{loadingFileStatus}}</p>
+<div class='load-files-outer'>
+  <div class='load-files-modal'>
+    <p>{{loadingFileStatus}}</p>
 
-  <form>
-    <label for='custom-input' class='custom-input-label'>Add file</label>
-    {{{Input name='custom-input' type='file' text='Select file'}}}
-    {{{Button class='btn btn-dark' label='Change avatar'}}}
-  </form>
+    <form>
+      <label for='custom-input' class='custom-input-label'>
+        {{{input}}}
+      </label>
+      {{{button}}}
+    </form>
+  </div>
 </div>

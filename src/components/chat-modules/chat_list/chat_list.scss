@@ -4,12 +4,15 @@
   height: 100%;
   border-right: 1px solid $dark-text-color;
 
-  .profile-link {
-    width: 90%;
-    @include flexbox(end, center, row, 5%, 0);
+  .actions {
+    @include flexbox(space-between, center, row, 5%, 0);
     cursor: pointer;
+    width: 90%;
     margin: 0.5rem 0;
+  }
 
+  aside {
+    width: 100%;
   }
 
   form {
@@ -36,4 +39,19 @@
       border-radius: 5px;
     }
   }
+
+  .create-chat-btn, .to-profile-btn {
+    cursor: pointer;
+
+    font-size: 1rem;
+    color: $text-color;
+
+    background: transparent;
+    border: none;
+    
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
 }

@@ -1,5 +1,5 @@
-import WSTransport, { WSTransportEvents } from '../utils/WSTransport';
-import store from '../utils/Store';
+import WSTransport, { WSTransportEvents } from "../utils/WSTransport";
+import store from "../utils/Store";
 
 export interface Message {
   chat_id: number;
@@ -48,7 +48,7 @@ class MessagesController {
     }
 
     socket.send({
-      type: 'message',
+      type: "message",
       content: message,
     });
   }
@@ -60,7 +60,7 @@ class MessagesController {
       throw new Error(`Chat ${id} is not connected`);
     }
 
-    socket.send({ type: 'get old', content: '0' });
+    socket.send({ type: "get old", content: "0" });
   }
 
   closeAll() {
@@ -97,7 +97,7 @@ class MessagesController {
 
 const controller = new MessagesController();
 
-// @ts-ignore
+// @ts-expect-error error
 window.messagesController = controller;
 
 export default controller;

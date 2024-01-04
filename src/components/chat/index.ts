@@ -1,7 +1,9 @@
-import Block from '../../utils/Block';
-import template from './chat.hbs';
-import { withStore } from '../../utils/Store';
-import { ChatInfo } from '../../api/ChatsAPI';
+import Block from "../../utils/Block";
+import template from "./chat.hbs";
+import { withStore } from "../../utils/Store";
+import { ChatInfo } from "../../api/ChatsAPI";
+import { Button } from "../button";
+import ChatsController from "../../controllers/ChatsController";
 
 interface ChatProps {
   id: number;
@@ -10,7 +12,7 @@ interface ChatProps {
   selectedChat: ChatInfo;
   events: {
     click: () => void;
-  }
+  };
 }
 
 class ChatBase extends Block<ChatProps> {
@@ -19,10 +21,28 @@ class ChatBase extends Block<ChatProps> {
   }
 
   protected render(): DocumentFragment {
-    return this.compile(template, {...this.props, isSelected: this.props.id === this.props.selectedChat?.id});
+    return this.compile(template, {
+      ...this.props,
+      isSelected: this.props.id === this.props.selectedChat?.id,
+    });
+  }
+
+  protected init() {
+    this.children.deleteChat = new Button({
+      label: "delete",
+      class: "delete-chat-btn",
+      events: {
+        click: (event) => {
+          event?.stopPropagation();
+          ChatsController.delete(this.props.id);
+        },
+      },
+    });
   }
 }
 
-export const withSelectedChat = withStore(state => ({selectedChat: (state.chats || []).find(({id}) => id === state.selectedChat)}));
+export const withSelectedChat = withStore((state) => ({
+  selectedChat: (state.chats || []).find(({ id }) => id === state.selectedChat),
+}));
 
 export const Chat = withSelectedChat(ChatBase);

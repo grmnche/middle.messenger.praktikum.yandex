@@ -1,6 +1,6 @@
-import API, { ChatsAPI } from '../api/ChatsAPI';
-import store from '../utils/Store';
-import MessagesController from './MessagesController';
+import API, { ChatsAPI } from "../api/ChatsAPI";
+import store from "../utils/Store";
+import MessagesController from "./MessagesController";
 
 class ChatsController {
   private readonly api: ChatsAPI;
@@ -24,11 +24,15 @@ class ChatsController {
       await MessagesController.connect(chat.id, token);
     });
 
-    store.set('chats', chats);
+    store.set("chats", chats);
   }
 
-  addUserToChat(id: number, userId: number) {
-    this.api.addUsers(id, [userId]);
+  async addUserToChat(id: number, userId: number) {
+    await this.api.addUsers(id, [userId]);
+  }
+
+  async removeUserFromChat(id: number, userId: number) {
+    await this.api.removeUsers(id, [userId]);
   }
 
   async delete(id: number) {
@@ -42,13 +46,17 @@ class ChatsController {
   }
 
   selectChat(id: number) {
-    store.set('selectedChat', id);
+    store.set("selectedChat", id);
+  }
+
+  getChatUsers(chatId: number) {
+    return this.api.getUsers(chatId);
   }
 }
 
 const controller = new ChatsController();
 
-// @ts-ignore
+// @ts-expect-error error
 window.chatsController = controller;
 
 export default controller;

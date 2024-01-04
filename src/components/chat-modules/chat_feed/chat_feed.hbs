@@ -2,6 +2,9 @@
   {{#if selectedChat}}
     <div class='chat-feed__header'>
       {{{userPreview}}}
+      {{{removeUserBtn}}}
+      {{{userID}}}
+      {{{addUserBtn}}}
       {{{chatSettingsBtn}}}
     </div>
 
@@ -13,9 +16,10 @@
       </div>
     </div>
     <div class='chat-feed__footer'>
-      {{{addFilesBtn}}}
 
       <form>
+        {{{addFilesBtn}}}
+
         {{{messageField}}}
         <span class='input-error'>{{inputError}}</span>
 

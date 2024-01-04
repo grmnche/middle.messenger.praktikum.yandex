@@ -1,8 +1,8 @@
-import { Messenger } from '../../components/chat-modules/chat_feed';
-import { ChatsList } from '../../components/chat-modules/chat_list';
-import Block from '../../utils/Block';
-import template from './chat.hbs';
-import ChatsController from '../../controllers/ChatsController';
+import { Messenger } from "../../components/chat-modules/chat_feed";
+import { ChatsList } from "../../components/chat-modules/chat_list";
+import Block from "../../utils/Block";
+import template from "./messenger.hbs";
+import ChatsController from "../../controllers/ChatsController";
 
 export class MessengerPage extends Block {
   constructor() {

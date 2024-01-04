@@ -1,6 +1,6 @@
-import Block from '../../utils/Block';
-import { validateField } from '../../utils/Validation/Validation';
-import template from './input.hbs';
+import Block from "../../utils/Block";
+import { validateField } from "../../utils/Validation/Validation";
+import template from "./input.hbs";
 
 interface InputProps {
   name: string;
@@ -9,8 +9,10 @@ interface InputProps {
   placeholder?: string;
   label?: string;
   inputError?: string;
+  accept?: string;
   events?: {
-    focusout: (event: FocusEvent) => void;
+    focusout?: (event: FocusEvent) => void;
+    change?: (event: Event) => void;
   };
 }
 
@@ -20,6 +22,7 @@ export class Input extends Block<InputProps> {
       ...props,
       events: {
         focusout: () => this.onValidate(),
+        change: (event: Event) => this.onFileChange(event),
       },
     });
   }
@@ -38,6 +41,23 @@ export class Input extends Block<InputProps> {
 
   public onValidate() {
     return validateField(this.element as HTMLInputElement);
+  }
+
+  public onFileChange(event: Event) {
+    const fileInput = event.target as HTMLInputElement;
+    console.log("fileInput: ", fileInput);
+    const file: File | undefined = fileInput.files?.[0];
+
+    if (file) {
+      console.log(file);
+      // Отправить файл на сервер
+      // UserController.uploadAvatar(file);
+    }
+  }
+
+  public getFile(): File | undefined {
+    const fileInput = this.element as HTMLInputElement;
+    return fileInput.files?.[0];
   }
 
   render() {

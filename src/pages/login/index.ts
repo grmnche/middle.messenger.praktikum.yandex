@@ -21,14 +21,14 @@ export class Login extends Block {
       label: 'Login',
       name: 'login',
       type: 'text',
-      placeholder: 'Login'
+      placeholder: 'Login',
     });
 
     this.children.password = new Input({
       label: 'Password',
       name: 'password',
       type: 'password',
-      placeholder: 'Password'
+      placeholder: 'Password',
     });
 
     this.children.button = new Button({
@@ -46,16 +46,20 @@ export class Login extends Block {
   }
 
   onSubmit() {
-    const values = Object.values(this.children)
-      .filter((child) => child instanceof Input)
-      .map((child) => [
-        (child as Input).getName(),
-        (child as Input).getValue(),
-      ]);
+    const inputs = Object.values(this.children).filter(
+      (child) => child instanceof Input,
+    ) as Input[];
 
-    const data = Object.fromEntries(values);
+    const isValid = inputs.every((input) => input.onValidate());
 
-    AuthController.signin(data as SignupData);
+    if (isValid) {
+      console.log('data is valid');
+      const values = inputs.map((input) => [input.getName(), input.getValue()]);
+
+      const data = Object.fromEntries(values);
+
+      AuthController.signin(data as SignupData);
+    }
   }
 
   render() {

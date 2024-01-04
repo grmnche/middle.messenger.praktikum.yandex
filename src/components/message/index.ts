@@ -4,6 +4,7 @@ import template from './message.hbs';
 interface MessageProps {
   content?: string;
   isMine?: boolean;
+  userName: string;
 }
 
 export class Message extends Block<MessageProps> {
@@ -12,6 +13,6 @@ export class Message extends Block<MessageProps> {
   }
 
   protected render(): DocumentFragment {
-    return this.compile(template, { ...this.props });
+    return this.compile(template, this.props );
   }
 }

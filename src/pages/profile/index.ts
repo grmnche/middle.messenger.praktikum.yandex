@@ -1,28 +1,27 @@
-import Block from '../../utils/Block';
-import template from './profile.hbs';
-import { User } from '../../api/AuthAPI';
-import { Button } from '../../components/button';
-import AuthController from '../../controllers/AuthController';
-import { withStore } from '../../utils/Store';
-import { profileField } from '../../components/profile-field';
-import { ProfileBackBar } from '../../components/profile_back_bar';
-import { UserAvatar } from '../../components/user_avatar';
-import Router from '../../utils/Router';
+import Block from "../../utils/Block";
+import template from "./profile.hbs";
+import { User } from "../../api/AuthAPI";
+import { Button } from "../../components/button";
+import AuthController from "../../controllers/AuthController";
+import { withStore } from "../../utils/Store";
+import { profileField } from "../../components/profile-field";
+import { ProfileBackBar } from "../../components/profile_back_bar";
+import { UserAvatar } from "../../components/user_avatar";
+import Router from "../../utils/Router";
+import { LoadFile } from "../../components/modals/load_file";
 
 interface ProfileProps extends User {}
 
 const userFields = [
-  // 'avatar',
-  // 'display_name',
-  // 'id',
-  'first_name',
-  'second_name',
-  'login',
-  'email',
-  'phone',
+  "id",
+  "first_name",
+  "second_name",
+  "login",
+  "email",
+  "phone",
 ] as Array<keyof ProfileProps>;
 
-const userFieldNames = ['Name', 'Surname', 'Login', 'Email', 'Phone'];
+const userFieldNames = ["ID", "Name", "Surname", "Login", "Email", "Phone"];
 
 class Profile extends Block<ProfileProps> {
   init() {
@@ -36,13 +35,20 @@ class Profile extends Block<ProfileProps> {
     this.children.profileBackBar = new ProfileBackBar({});
 
     this.children.userAvatar = new UserAvatar({
-      class: 'user-avatar',
-      src: '/src/images/avatar.png',
+      class: "user-avatar",
+      events: {
+        click: () => {
+          const modal = document.querySelector(".load-files-outer");
+          modal?.classList.toggle("active");
+        },
+      },
     });
 
+    this.children.loadFile = new LoadFile({});
+
     this.children.logoutButton = new Button({
-      label: 'Log out',
-      class: 'logout-btn',
+      label: "Log out",
+      class: "logout-btn",
       events: {
         click: () => {
           AuthController.logout();
@@ -51,21 +57,21 @@ class Profile extends Block<ProfileProps> {
     });
 
     this.children.changeInfo = new Button({
-      label: 'Change info',
-      class: 'change-info-btn',
+      label: "Change info",
+      class: "change-info-btn",
       events: {
         click: () => {
-          Router.go('/settings');
+          Router.go("/settings");
         },
       },
     });
 
     this.children.changePassword = new Button({
-      label: 'Change password',
-      class: 'change-password-btn',
+      label: "Change password",
+      class: "change-password-btn",
       events: {
         click: () => {
-          Router.go('/settings-password');
+          Router.go("/settings-password");
         },
       },
     });
@@ -75,24 +81,10 @@ class Profile extends Block<ProfileProps> {
     oldProps: ProfileProps,
     newProps: ProfileProps,
   ): boolean {
-    /**
-     * Обновляем детей
-     */
     (this.children.fields as profileField[]).forEach((field, i) => {
       field.setProps({ value: newProps[userFields[i]] });
     });
 
-    /**
-     * Другой вариант — просто заново создать всех детей. Но тогда метод должен возвращать true, чтобы новые дети отрендерились
-     *
-     * this.children.fields = userFields.map(name => {
-     *   return new profileField({ name, value: newProps[name] });
-     * });
-     */
-
-    /**
-     * Так как мы обновили детей, этот компонент не обязательно рендерить
-     */
     return false;
   }
 

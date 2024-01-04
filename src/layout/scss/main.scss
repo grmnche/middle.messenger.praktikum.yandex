@@ -15,10 +15,9 @@
 @import '../../components/chat/chat';
 @import '../../components/input/input';
 
-@import '../../pages/chat/chat';
+@import '../../pages/messenger/messenger';
 @import '../../pages/login/login';
-@import '../../pages/modals/modals';
-@import '../../pages/profile/profile';
+@import '../../pages/profile/profile.scss';
 @import '../../pages/registration/registration';
 
 * {
@@ -28,8 +27,8 @@
 
   &::-webkit-scrollbar {
     width: 4px;
-    border-radius: 4px;
     background: $main-light;
+    border-radius: 4px;
   }
 
   &::-webkit-scrollbar-thumb {
@@ -52,6 +51,7 @@ body {
 
 .input-container {
   width: 100%;
+  
   input {
     @include placeholder-style($light-text-color, 14px, 0);
   }
@@ -59,15 +59,19 @@ body {
 
 .input-error {
   position: absolute;
+  z-index: 5;
   top: 18px;
 
   display: none;
-  z-index: 5;
 
-  color: red;
   font-size: 10px;
+  color: red;
 
   &.show {
     display: block;
   }
+}
+
+button {
+  cursor: pointer;
 }

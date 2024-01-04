@@ -1,26 +1,26 @@
-import Router from './utils/Router';
-import AuthController from './controllers/AuthController';
-import { SignUp } from './pages/registration';
-import { MessengerPage } from './pages/chat';
-import { Login } from './pages/login';
-import { ProfilePage } from './pages/profile';
-import { Error400 } from './pages/error/error400';
-import { Error500 } from './pages/error/error500';
-import { SettingsPassword } from './pages/profile/modules/change_password';
-import { Settings } from './pages/profile/modules/change_profile_data';
+import Router from "./utils/Router";
+import AuthController from "./controllers/AuthController";
+import { SignUp } from "./pages/registration";
+import { MessengerPage } from "./pages/messenger";
+import { Login } from "./pages/login";
+import { ProfilePage } from "./pages/profile";
+import { Error400 } from "./pages/error/error400";
+import { Error500 } from "./pages/error/error500";
+import { SettingsPassword } from "./pages/profile/modules/settings-password";
+import { Settings } from "./pages/profile/modules/settings";
 
 enum Routes {
-  Index = '/',
-  SignUp = '/sign-up',
-  Profile = '/profile',
-  Messenger = '/messenger',
-  Error400 = '/error400',
-  Error500 = '/error500',
-  SettingsPassword = '/settings-password',
-  Settings = '/settings',
+  Index = "/",
+  SignUp = "/sign-up",
+  Profile = "/profile",
+  Messenger = "/messenger",
+  Error400 = "/error400",
+  Error500 = "/error500",
+  SettingsPassword = "/settings-password",
+  Settings = "/settings",
 }
 
-window.addEventListener('DOMContentLoaded', async () => {
+window.addEventListener("DOMContentLoaded", async () => {
   Router.use(Routes.Index, Login)
     .use(Routes.SignUp, SignUp)
     .use(Routes.Profile, ProfilePage)

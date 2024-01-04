@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "eslint": "eslint src --fix",
-    "stylelint": "stylelint **/*.scss --config-basedir=./",
+    "stylelint": "stylelint **/*.scss --config-basedir=./ --fix",
     "start": "npm run build && node server.js",
     "dev": "vite",
     "build": "vite build",
@@ -34,6 +34,8 @@
     "vite-plugin-handlebars": "^1.6.0"
   },
   "dependencies": {
+    "esm": "^3.2.25",
+    "express-history-api-fallback": "^2.2.1",
     "fs": "^0.0.1-security",
     "handlebars": "^4.7.8",
     "handlebars-loader": "^1.7.3",

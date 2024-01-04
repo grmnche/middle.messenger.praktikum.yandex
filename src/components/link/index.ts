@@ -1,11 +1,8 @@
-import Block from '../../utils/Block';
-import { PropsWithRouter, withRouter } from '../../hocs/withRouter';
-import template from './link.hbs';
+import Block from "../../utils/Block";
+import { PropsWithRouter, withRouter } from "../../hocs/withRouter";
+import template from "./link.hbs";
 
 interface LinkProps extends PropsWithRouter {
-  to: string;
-  label: string;
-  class: string;
   events?: {
     click: () => void;
   };
@@ -16,13 +13,13 @@ class BaseLink extends Block<LinkProps> {
     super({
       ...props,
       events: {
-        click: () => this.navigate()
+        click: () => this.navigate(),
       },
     });
   }
 
   navigate() {
-    this.props.router.go(this.props.to);
+    this.props.router?.go(this.props.to);
   }
 
   render() {
