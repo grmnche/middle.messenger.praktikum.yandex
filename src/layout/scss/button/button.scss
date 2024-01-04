@@ -1,15 +1,17 @@
-button:not(.modal-btn) {
+.button {
+  cursor: pointer;
+
   width: 280px;
   min-height: 37px;
-  border-radius: 8px;
-  border: none;
+  margin: auto 0 -1rem;
 
   font-size: 1.1rem;
   font-weight: 500;
-  cursor: pointer;
-  transition: 0.2s;
 
-  margin: auto 0 -1rem;
+  border: none;
+  border-radius: 8px;
+
+  transition: 0.2s;
  
 
   &:hover {

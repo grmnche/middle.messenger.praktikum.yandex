@@ -1,0 +1,65 @@
+.chat-outer {
+  hr {
+    width: 90%;
+    height: 0;
+    margin-inline: auto;
+    border: 1px solid $dark-color-2;
+  }
+}
+
+.chat {
+  @include flexbox-style(flex, start, center, row, fit-content);
+  position: relative;
+
+  width: 90%;
+  margin-inline: auto;
+  padding: 11px;
+
+  font-size: 1.2rem;
+
+  &__user-avatar {
+    width: 2.8rem;
+    height: 2.8rem;
+    background-image: url('/images/avatar.png');
+    background-size: cover;
+  }
+
+  &__info {
+    display: grid;
+    width: 80%;
+  }
+
+  .info {
+    margin: 10px 0 10px 10px;
+
+    &__name {
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+
+    &__last-message {
+      overflow: hidden;
+      display: -webkit-box;
+
+      max-width: 90%;
+
+      font-size: 0.8rem;
+      color: $light-text-color;
+      text-overflow: ellipsis;
+
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+
+    &__time {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      margin: 11px;
+
+      font-size: 10px;
+      color: $text-color;
+    }
+  }
+}

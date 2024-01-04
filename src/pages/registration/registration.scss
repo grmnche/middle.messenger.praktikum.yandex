@@ -1,7 +1,11 @@
-@import '/layout/scss/main';
 @import '/layout/scss/form';
 @import '/layout/scss/button/button_dark';
 
-.form {
-  height: 550px !important;
+.registration-page {
+  @include flexbox-style(flex, center, center, column, 100%);
+}
+
+.registration-form {
+  height: 610px !important;
+  max-height: 610px !important;
 }

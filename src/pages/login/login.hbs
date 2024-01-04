@@ -1,0 +1,16 @@
+<main class='login-page'>
+  <div class='form login-form'>
+    <h2>Login</h2>
+    <form>
+      {{#each inputs}}
+          {{{Input labelName=this.labelName type=this.type name=this.name inputError=this.inputError onFocusout=this.onFocusout}}}
+      {{/each}}
+
+      {{{Button class='button button-dark' label=this.label type=../type onClick=this.onClickSubmit}}}
+    </form>
+    
+    <nav class='nav'>
+      <a class='create-account' href='#'>Create account</a>
+    </nav>
+  </div>
+</main>

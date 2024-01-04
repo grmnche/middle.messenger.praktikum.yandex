@@ -1,52 +1,57 @@
-@import '/layout/scss/button/button';
-@import '/layout/scss/button/button_light';
-@import '/layout/scss/main';
-
 .profile,
 .change-profile-password,
 .change-profile-data {
   @include flexbox-style(flex, center, center, column, 90%);
-}
-
-.profile {
-  height: auto;
+  position: relative;
 }
 
 .data-container,
 .password-data-container {
-  margin-top: 5rem;
+  margin-top: 9rem;
+
+  form {
+    @include flexbox-style(flex, center, center, column, 90%);
+  }
 
   div:last-child {
     border-bottom: none;
   }
 }
 
-.password-data-container {
-  margin-top: 8rem;
+.profile {
+  .data-container {
+    margin-top: 20rem;
+  }
 }
 
 .profile-footer {
-  margin-top: 2rem;
   flex-direction: column;
+  margin-top: 2rem;
 
   a {
+    padding: 0.6rem 0;
     color: $text-color;
     text-decoration: none;
 
-    padding: 0.6rem 0;
-
     &:nth-child(3) {
-      border-bottom: none;
       color: red;
+      border-bottom: none;
     }
   }
 }
 
-input {
+.item-value {
+  width: 14rem;
   margin: 0.6rem 0;
+
+  font-size: 1rem;
+  text-align: right;
+
   background: transparent;
   border: none;
-  text-align: right;
-  width: 14rem;
-  font-size: 1rem;
+}
+
+.profile-button {
+  position: absolute;
+  bottom: 3rem !important;
 }
