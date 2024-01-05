@@ -97,8 +97,8 @@
 
 .users-list {
   @include flexbox(center, center, column, auto, 0);
-  color: $main-color;
   margin: 1rem 0;
+  color: $main-color;
 }
 
 .delete-user-btn {
