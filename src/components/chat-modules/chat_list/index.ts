@@ -1,12 +1,12 @@
-import { ChatInfo } from "../../../api/ChatsAPI";
-import Block from "../../../utils/Block";
-import { Chat } from "../../chat";
-import { Link } from "../../link";
-import template from "./chat_list.hbs";
-import ChatsController from "../../../controllers/ChatsController";
-import { withStore } from "../../../utils/Store";
-import { Input } from "../../input";
-import { Button } from "../../button";
+import { ChatInfo } from '../../../api/ChatsAPI';
+import Block from '../../../utils/Block';
+import { Chat } from '../../chat';
+import { Link } from '../../link';
+import template from './chat_list.hbs';
+import ChatsController from '../../../controllers/ChatsController';
+import { withStore } from '../../../utils/Store';
+import { Input } from '../../input';
+import { Button } from '../../button';
 
 interface ChatsListProps {
   chats: ChatInfo[];
@@ -21,26 +21,48 @@ class ChatsListBase extends Block<ChatsListProps> {
   protected init() {
     this.children.chats = this.createChats(this.props);
     this.children.profileLink = new Link({
-      to: "/profile",
-      label: "Profile",
-      class: "to-profile-btn",
+      to: '/profile',
+      label: 'Profile',
+      class: 'to-profile-btn',
     });
 
     this.children.createChat = new Button({
-      label: "New chat",
-      class: "create-chat-btn",
+      label: 'New chat',
+      class: 'create-chat-btn',
       events: {
         click: () => {
-          ChatsController.create("Chat");
+          document
+            .querySelector('.chat-list-modal-outer')
+            ?.classList.add('active');
+        },
+      },
+    });
+
+    this.children.createChatBtn = new Button({
+      label: 'Add chat',
+      class: 'btn btn-dark',
+      events: {
+        click: () => {
+          const input = this.children.chatName as Input;
+          const chatName = input.getValue();
+
+          ChatsController.create(chatName);
         },
       },
     });
 
     this.children.search = new Input({
-      name: "message",
-      type: "text",
-      placeholder: "Search",
-      inputError: "At least one letter",
+      name: 'message',
+      type: 'text',
+      placeholder: 'Search',
+      inputError: 'At least one letter',
+    });
+
+    this.children.chatName = new Input({
+      name: 'chat_name',
+      type: 'text',
+      placeholder: 'Enter chat name',
+      value: '',
     });
   }
 

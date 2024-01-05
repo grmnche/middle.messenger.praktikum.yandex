@@ -1,8 +1,15 @@
 <div class='chat-feed'>
   {{#if selectedChat}}
+    <div class='modal-outer chat-feed-modal-outer'>
+      <div class='modal'>
+        {{{userToDelete}}}
+        {{{deleteUserBtn}}}
+      </div>
+    </div>
+
     <div class='chat-feed__header'>
       {{{userPreview}}}
-      {{{removeUserBtn}}}
+      {{{removeUsers}}}
       {{{userID}}}
       {{{addUserBtn}}}
       {{{chatSettingsBtn}}}
@@ -17,7 +24,7 @@
     </div>
     <div class='chat-feed__footer'>
 
-      <form>
+      <form class='message-form' onsubmit='return false;'>
         {{{addFilesBtn}}}
 
         {{{messageField}}}

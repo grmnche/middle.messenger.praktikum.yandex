@@ -75,3 +75,31 @@ body {
 button {
   cursor: pointer;
 }
+
+
+
+.modal-outer {
+  background-color: #0004;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+
+  display: none;
+
+  &.active {
+    @include flexbox(center, center, column, 100%, 0);
+  }
+}
+.modal {
+  @include flexbox(center, center, column, 100%, 0);
+
+  width: 340px;
+  height: 260px;
+  border-radius: 14px;
+  background-color: $main-light;
+
+  button {
+    margin-top: 3rem;
+  }
+}

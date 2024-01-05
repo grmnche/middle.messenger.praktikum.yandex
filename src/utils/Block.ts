@@ -1,12 +1,12 @@
-import { EventBus } from "./EventBus";
-import { nanoid } from "nanoid";
+import { EventBus } from './EventBus';
+import { nanoid } from 'nanoid';
 
 class Block<P extends Record<string, any> = any> {
   static EVENTS = {
-    INIT: "init",
-    FLOW_CDM: "flow:component-did-mount",
-    FLOW_CDU: "flow:component-did-update",
-    FLOW_RENDER: "flow:render",
+    INIT: 'init',
+    FLOW_CDM: 'flow:component-did-mount',
+    FLOW_CDU: 'flow:component-did-update',
+    FLOW_RENDER: 'flow:render',
   } as const;
 
   public id = nanoid(6);
@@ -164,7 +164,7 @@ class Block<P extends Record<string, any> = any> {
 
     const html = template(contextAndStubs);
 
-    const temp = document.createElement("template");
+    const temp = document.createElement('template');
 
     temp.innerHTML = html;
 
@@ -203,18 +203,18 @@ class Block<P extends Record<string, any> = any> {
     return new Proxy(props, {
       get: (target, prop: string) => {
         const value = target[prop];
-        return typeof value === "function" ? value.bind(target) : value;
+        return typeof value === 'function' ? value.bind(target) : value;
       },
       set: (target, prop: string, value) => {
         const oldTarget = { ...target };
 
         target[prop as keyof P] = value;
 
-        this.eventBus().emit(Block.EVENTS.FLOW_CDU, oldTarget, target);
+        this.eventBus().emit(Block.EVENTS.FLOW_CDU, target, oldTarget);
         return true;
       },
       deleteProperty: () => {
-        throw new Error("No access");
+        throw new Error('No access');
       },
     });
   }

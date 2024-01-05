@@ -1,4 +1,4 @@
-import Block from "./Block";
+import Block from './Block';
 
 interface BlockConstructable<P = any> {
   new (props: P): Block<P | any>;
@@ -15,7 +15,7 @@ function render(query: string, block: Block) {
     throw new Error(`root not found by selector "${query}"`);
   }
 
-  root.innerHTML = "";
+  root.innerHTML = '';
 
   root.append(block.getContent()!);
 
@@ -99,7 +99,7 @@ class Router {
   }
 
   public go(pathname: string) {
-    this.history.pushState({}, "", pathname);
+    this.history.pushState({}, '', pathname);
 
     this._onRoute(pathname);
   }
@@ -117,4 +117,4 @@ class Router {
   }
 }
 
-export default new Router("#app");
+export default new Router('#app');

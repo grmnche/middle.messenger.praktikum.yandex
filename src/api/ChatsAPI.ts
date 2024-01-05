@@ -30,7 +30,7 @@ export class ChatsAPI extends BaseAPI {
     return this.http.get("/");
   }
 
-  getUsers(id: number): Promise<Array<User & { role: string }>> {
+  getUsers(id: number | undefined): Promise<Array<User & { role: string }>> {
     return this.http.get(`/${id}/users`);
   }
 
@@ -38,7 +38,7 @@ export class ChatsAPI extends BaseAPI {
     return this.http.put("/users", { users, chatId: id });
   }
 
-  removeUsers(id: number, users: number[]): Promise<unknown> {
+  removeUsers(id: number | undefined, users: number[] | any): Promise<unknown> {
     return this.http.delete(`/users`, { users, chatId: id });
   }
 

@@ -1,5 +1,5 @@
-import WSTransport, { WSTransportEvents } from "../utils/WSTransport";
-import store from "../utils/Store";
+import WSTransport, { WSTransportEvents } from '../utils/WSTransport';
+import store from '../utils/Store';
 
 export interface Message {
   chat_id: number;
@@ -34,10 +34,13 @@ class MessagesController {
 
     this.sockets.set(id, wsTransport);
 
-    await wsTransport.connect();
-
-    this.subscribe(wsTransport, id);
-    this.fetchOldMessages(id);
+    try {
+      await wsTransport.connect();
+      this.subscribe(wsTransport, id);
+      this.fetchOldMessages(id);
+    } catch (e: any) {
+      console.error(e.message);
+    }
   }
 
   sendMessage(id: number, message: string) {
@@ -48,7 +51,7 @@ class MessagesController {
     }
 
     socket.send({
-      type: "message",
+      type: 'message',
       content: message,
     });
   }
@@ -60,7 +63,7 @@ class MessagesController {
       throw new Error(`Chat ${id} is not connected`);
     }
 
-    socket.send({ type: "get old", content: "0" });
+    socket.send({ type: 'get old', content: '0' });
   }
 
   closeAll() {

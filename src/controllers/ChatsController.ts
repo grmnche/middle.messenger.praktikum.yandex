@@ -1,6 +1,6 @@
-import API, { ChatsAPI } from "../api/ChatsAPI";
-import store from "../utils/Store";
-import MessagesController from "./MessagesController";
+import API, { ChatsAPI } from '../api/ChatsAPI';
+import store from '../utils/Store';
+import MessagesController from './MessagesController';
 
 class ChatsController {
   private readonly api: ChatsAPI;
@@ -10,47 +10,82 @@ class ChatsController {
   }
 
   async create(title: string) {
-    await this.api.create(title);
-
-    this.fetchChats();
-  }
-
-  async fetchChats() {
-    const chats = await this.api.read();
-
-    chats.map(async (chat) => {
-      const token = await this.getToken(chat.id);
-
-      await MessagesController.connect(chat.id, token);
-    });
-
-    store.set("chats", chats);
-  }
-
-  async addUserToChat(id: number, userId: number) {
-    await this.api.addUsers(id, [userId]);
-  }
-
-  async removeUserFromChat(id: number, userId: number) {
-    await this.api.removeUsers(id, [userId]);
+    try {
+      await this.api.create(title);
+      this.fetchChats();
+    } catch (error) {
+      console.error('Failed to create chat:', error);
+    }
   }
 
   async delete(id: number) {
-    await this.api.delete(id);
-
-    this.fetchChats();
+    try {
+      await this.api.delete(id);
+      this.fetchChats();
+    } catch (error) {
+      console.error('Failed to delete chat:', error);
+    }
   }
 
-  getToken(id: number) {
-    return this.api.getToken(id);
+  async fetchChats() {
+    try {
+      const chats = await this.api.read();
+
+      for (const chat of chats) {
+        try {
+          const token = await this.getToken(chat.id);
+          await MessagesController.connect(chat.id, token);
+        } catch (error) {
+          console.error(`Failed to connect to chat ${chat.id}:`, error);
+        }
+      }
+
+      store.set('chats', chats);
+    } catch (error) {
+      console.error('Failed to fetch chats:', error);
+    }
+  }
+
+  async addUserToChat(id: number, userId: number) {
+    try {
+      await this.api.addUsers(id, [userId]);
+    } catch (error) {
+      console.error(`Failed to add user ${userId} to chat ${id}:`, error);
+    }
+  }
+
+  async removeUserFromChat(id: number | undefined, userId: number | undefined) {
+    try {
+      await this.api.removeUsers(id, [userId]);
+    } catch (error) {
+      console.error(`Failed to remove user ${userId} from chat ${id}:`, error);
+    }
+  }
+
+  async getToken(id: number) {
+    try {
+      return await this.api.getToken(id);
+    } catch (error) {
+      console.error(`Failed to get token for chat ${id}:`, error);
+      throw error;
+    }
   }
 
   selectChat(id: number) {
-    store.set("selectedChat", id);
+    store.set('selectedChat', id);
   }
 
-  getChatUsers(chatId: number) {
-    return this.api.getUsers(chatId);
+  async getChatUsers(chatId: number | undefined) {
+    if (chatId === undefined) {
+      console.error('Chat ID is undefined');
+      return;
+    }
+    try {
+      return await this.api.getUsers(chatId);
+    } catch (error) {
+      console.error(`Failed to get users for chat ${chatId}:`, error);
+      throw error;
+    }
   }
 }
 

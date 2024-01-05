@@ -9,12 +9,13 @@
 
   border-right: 1px solid $dark-text-color;
 
-  &__image {
-    cursor: pointer;
-
+  &__btn {
     width: 2.5rem;
     height: 2.5rem;
 
+    border: none;
+
+    background-color: transparent;
     background-image: url('/images/back-btn.svg');
     background-size: cover;
   }

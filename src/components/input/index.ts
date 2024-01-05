@@ -10,6 +10,7 @@ interface InputProps {
   label?: string;
   inputError?: string;
   accept?: string;
+  value?: string | number;
   events?: {
     focusout?: (event: FocusEvent) => void;
     change?: (event: Event) => void;
