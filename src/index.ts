@@ -1,41 +1,57 @@
-import { registerComponent } from "./utils/registerComponent";
-import { render } from "./utils/render";
-import { Nav } from "./components/nav";
-import { Error } from "./components/error";
-import { ChatFeed } from "./components/chat/chat_feed/Index";
-import { ChatList } from "./components/chat/chat_list/Index";
-import { UserPreview } from "./components/user_preview";
-import { Button } from "./components/button";
-import { Input } from "./components/input";
-import { UserAvatar } from "./components/user_avatar";
-import { BtnAction } from "./components/btn_action/Index";
-import { UserAction } from "./components/modals/user_action";
-import { LoadFile } from "./components/modals/load_file";
-import { FileAttacher } from "./components/modals/file_attacher";
-import { ProfileBackBar } from "./components/profile_back_bar";
-import { ProfileDataItem } from "./components/profile_data_item";
-import { Form } from "./components/form";
-import { Message } from "./components/message";
-import { ChatPreview } from "./components/chat/chat-preview";
+import Router from "./utils/Router";
+import AuthController from "./controllers/AuthController";
+import { SignUp } from "./pages/registration";
+import { MessengerPage } from "./pages/messenger";
+import { Login } from "./pages/login";
+import { ProfilePage } from "./pages/profile";
+import { Error400 } from "./pages/error/error400";
+import { Error500 } from "./pages/error/error500";
+import { SettingsPassword } from "./pages/profile/modules/settings-password";
+import { Settings } from "./pages/profile/modules/settings";
 
-registerComponent("Nav", Nav);
-registerComponent("Error", Error);
-registerComponent("ChatFeed", ChatFeed);
-registerComponent("ChatList", ChatList);
-registerComponent("UserPreview", UserPreview);
-registerComponent("Button", Button);
-registerComponent("Input", Input);
-registerComponent("UserAvatar", UserAvatar);
-registerComponent("BtnAction", BtnAction);
-registerComponent("UserAction", UserAction);
-registerComponent("LoadFile", LoadFile);
-registerComponent("FileAttacher", FileAttacher);
-registerComponent("ProfileBackBar", ProfileBackBar);
-registerComponent("ProfileDataItem", ProfileDataItem);
-registerComponent("Form", Form);
-registerComponent("Message", Message);
-registerComponent("ChatPreview", ChatPreview);
+enum Routes {
+  Index = "/",
+  SignUp = "/sign-up",
+  Profile = "/profile",
+  Messenger = "/messenger",
+  Error400 = "/error400",
+  Error500 = "/error500",
+  SettingsPassword = "/settings-password",
+  Settings = "/settings",
+}
 
-window.addEventListener("DOMContentLoaded", () => {
-  render("home");
+window.addEventListener("DOMContentLoaded", async () => {
+  Router.use(Routes.Index, Login)
+    .use(Routes.SignUp, SignUp)
+    .use(Routes.Profile, ProfilePage)
+    .use(Routes.Messenger, MessengerPage)
+    .use(Routes.Error400, Error400)
+    .use(Routes.Error500, Error500)
+    .use(Routes.SettingsPassword, SettingsPassword)
+    .use(Routes.Settings, Settings);
+
+  let isProtectedRoute = true;
+
+  switch (window.location.pathname) {
+    case Routes.Index:
+    case Routes.SignUp:
+      isProtectedRoute = false;
+      break;
+  }
+
+  try {
+    await AuthController.fetchUser();
+
+    Router.start();
+
+    if (!isProtectedRoute) {
+      Router.go(Routes.Profile);
+    }
+  } catch (e) {
+    Router.start();
+
+    if (isProtectedRoute) {
+      Router.go(Routes.Index);
+    }
+  }
 });

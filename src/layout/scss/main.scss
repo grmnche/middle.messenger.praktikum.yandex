@@ -1,30 +1,40 @@
 @import './variables';
 @import './font';
 
-@import '../../components/chat/chat_feed/chat_feed';
-@import '../../components/chat/chat_list/chat_list';
+@import '../../components/chat-modules/chat_feed/chat_feed';
+@import '../../components/chat-modules/chat_list/chat_list';
 @import '../../components/btn_action/btn_action';
 @import '../../components/error/error';
 @import '../../components/modals/modals';
 @import '../../components/modals/load_file/load_file';
 @import '../../components/profile_back_bar/profile_back_bar';
-@import '../../components/profile_data_item/profile_data_item';
+@import '../../components/profile-field/profile-field';
 @import '../../components/user_avatar/user_avatar';
 @import '../../components/user_preview/user_preview';
 @import '../../components/message/message';
-@import '../../components/chat/chat-preview/chat-preview';
+@import '../../components/chat/chat';
 @import '../../components/input/input';
 
-@import '../../pages/chat/chat';
+@import '../../pages/messenger/messenger';
 @import '../../pages/login/login';
-@import '../../pages/modals/modals';
-@import '../../pages/profile/profile';
+@import '../../pages/profile/profile.scss';
 @import '../../pages/registration/registration';
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    background: $main-light;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: 6px;
+    background: $dark-text-color;
+  }
 }
 
 body {
@@ -40,9 +50,8 @@ body {
 }
 
 .input-container {
-  width: 80%;
-  margin-inline: 1rem;
-
+  width: 100%;
+  
   input {
     @include placeholder-style($light-text-color, 14px, 0);
   }
@@ -50,15 +59,50 @@ body {
 
 .input-error {
   position: absolute;
-  top: 35px;
+  z-index: 5;
+  top: 18px;
 
   display: none;
-  z-index: 5;
 
-  color: red;
   font-size: 10px;
+  color: red;
 
   &.show {
     display: block;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+
+
+.modal-outer {
+  position: absolute;
+  inset: 0;
+
+  display: none;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: #0004;
+
+  &.active {
+    @include flexbox(center, center, column, 100%, 0);
+  }
+}
+
+.modal {
+  @include flexbox(center, center, column, 100%, 0);
+
+  width: 340px;
+  height: 260px;
+  background-color: $main-light;
+  border-radius: 14px;
+
+  button {
+    margin-top: 3rem;
   }
 }

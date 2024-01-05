@@ -1,10 +1,11 @@
-<div class='input-container {{className}}'>
-  <label for='{{name}}'>{{labelName}}</label>
-  <input
-    name='{{name}}'
-    type='{{type}}'
-    id='{{name}}'
-    placeholder='{{placeholder}}'
-  />
-  <span class='input-error'>{{inputError}}</span>
-</div>
+<input
+  class='{{class}}'
+  name='{{name}}'
+  type='{{type}}'
+  id='{{name}}'
+  value='{{value}}'
+  placeholder='{{placeholder}}'
+  {{#if accept}}
+    accept='{{accept}}'
+  {{/if}}
+/>

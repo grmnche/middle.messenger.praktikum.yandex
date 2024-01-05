@@ -2,10 +2,13 @@
 @import '/layout/scss/button/button_dark';
 
 .registration-page {
-  @include flexbox-style(flex, center, center, column, 100%);
+  @include flexbox(center, center, column, 100%, 0);
+
+  .input-container {
+    width: 80%;
+  }
 }
 
 .registration-form {
   height: 610px !important;
-  max-height: 610px !important;
 }

@@ -2,15 +2,23 @@
   <div class='form login-form'>
     <h2>Login</h2>
     <form>
-      {{#each inputs}}
-          {{{Input labelName=this.labelName type=this.type name=this.name inputError=this.inputError onFocusout=this.onFocusout}}}
-      {{/each}}
+      <div class='input-container {{className}}'>
+        <label for='{{name}}'>{{label}}</label>
+        {{{login}}}
+        <span class='input-error'>{{loginError}}</span>
+      </div>
 
-      {{{Button class='button button-dark' label=this.label type=../type onClick=this.onClickSubmit}}}
+      <div class='input-container {{className}}'>
+        <label for='{{name}}'>{{label}}</label>
+        {{{password}}}
+        <span class='input-error'>{{passwordError}}</span>
+      </div>
+
+      {{{button}}}
     </form>
-    
+
     <nav class='nav'>
-      <a class='create-account' href='#'>Create account</a>
+      {{{link}}}
     </nav>
   </div>
 </main>

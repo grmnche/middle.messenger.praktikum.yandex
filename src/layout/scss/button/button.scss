@@ -1,6 +1,4 @@
-.button {
-  cursor: pointer;
-
+.btn {
   width: 280px;
   min-height: 37px;
   margin: auto 0 -1rem;
@@ -12,7 +10,6 @@
   border-radius: 8px;
 
   transition: 0.2s;
- 
 
   &:hover {
     opacity: 0.8;

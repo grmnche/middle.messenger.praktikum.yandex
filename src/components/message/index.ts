@@ -2,19 +2,17 @@ import Block from "../../utils/Block";
 import template from "./message.hbs";
 
 interface MessageProps {
-  messageText: string;
-  messageTime: string;
-  whoseMessage: string;
+  content?: string;
+  isMine?: boolean;
+  userName: string;
 }
 
-export class Message extends Block {
+export class Message extends Block<MessageProps> {
   constructor(props: MessageProps) {
-    super({
-      ...props,
-    });
+    super(props);
   }
 
-  render() {
+  protected render(): DocumentFragment {
     return this.compile(template, this.props);
   }
 }
