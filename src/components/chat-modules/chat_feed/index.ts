@@ -73,6 +73,9 @@ class MessengerBase extends Block<MessengerProps> {
 
           if (chatId && userId) {
             await controller.addUserToChat(chatId, userId);
+            const users = await controller.getChatUsers(chatId);
+            console.log('users: ', users);
+
             alert('User added');
           } else {
             alert("There's no user with this ID");

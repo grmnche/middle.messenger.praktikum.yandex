@@ -39,7 +39,7 @@ export class AuthController {
       const user = await this.api.read();
       store.set('user', user);
     } catch (e: any) {
-      console.error(e.message);
+      throw new Error(e);
     }
   }
 

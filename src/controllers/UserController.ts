@@ -71,9 +71,13 @@ export class UserController {
 
   getAvatar() {
     const state = store.getState();
-    const userAvatar = state.user.avatar;
+    const user = state.user as User;
 
-    const getAvatar = this.api.getResources(userAvatar);
+    if (!user || !user.avatar) {
+      return null;
+    }
+
+    const getAvatar = this.api.getResources(user.avatar);
     return getAvatar;
   }
 }

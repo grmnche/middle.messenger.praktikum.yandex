@@ -31,7 +31,7 @@
 [https://github.com/grmnche/middle.messenger.praktikum.yandex/pull/14]
 
 **Netlify**
-[https://dazzling-pothos-5d85b2.netlify.app/]
+[https://euphonious-rabanadas-b7613a.netlify.app/]
 
 **Страницы**
 [Ошибка400](src/pages/error/error400/error400.hbs)
